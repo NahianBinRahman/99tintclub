@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSiteConfig } from "@/context/site-context";
+import { BrandLogo } from "@/components/brand-logo";
 import {
   Menu,
   X,
@@ -88,25 +89,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10 sm:h-11">
-            {/* Logo */}
-            <Link
-              href="/"
-              className="group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] rounded-lg"
-              aria-label="Outumn Studio Detailing Home"
-            >
-              <div className="relative w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-[var(--accent-primary)] transition-colors duration-200">
-                <div
-                  className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-200"
-                  style={{ background: "var(--accent-gradient)" }}
-                />
-                <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--accent-primary)] relative z-10 transition-transform duration-200 group-hover:rotate-6" />
-              </div>
-
-              <span className="text-sm sm:text-base font-black tracking-wider text-white flex items-center gap-1.5 leading-none">
-                {config.brandName}
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]" />
-              </span>
-            </Link>
+            {/* Luxury Brand Logo */}
+            <BrandLogo size="md" />
 
             {/* Desktop Navigation Links */}
             <nav

@@ -39,7 +39,7 @@ interface SiteContextType {
   importConfigJson: (jsonString: string) => boolean;
 }
 
-const STORAGE_KEY = "outumn_joshieknocks_config_v6_pro";
+const STORAGE_KEY = "tintclub_joshieknocks_config_v1";
 
 const SiteContext = createContext<SiteContextType | undefined>(undefined);
 

@@ -48,8 +48,8 @@ export const businessMetrics: BusinessMetrics = {
 };
 
 export const businessInfo = {
-  name: "OUTUMN",
-  legalName: "Outumn Studio Detailing LLC",
+  name: "$99 TINT CLUB",
+  legalName: "$99 Tint Club LLC",
   tagline: "Ultra Bespoke Automotive Care & Protection",
   description:
     "Luxury automotive studio specializing in precision paint protection film (PPF), multi-stage paint correction, and advanced ceramic coatings.",

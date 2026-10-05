@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSiteConfig } from "@/context/site-context";
+import { BrandLogo } from "@/components/brand-logo";
 import {
   Shield,
   Phone,
@@ -68,18 +69,7 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-14 border-b border-white/[0.08]">
             {/* Col 1: Brand & Bio (4 cols) */}
             <div className="lg:col-span-4">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2.5 mb-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] rounded-lg"
-              >
-                <div className="w-9 h-9 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-[var(--accent-primary)] group-hover:border-[var(--accent-primary)] transition-colors">
-                  <Shield className="w-4.5 h-4.5" />
-                </div>
-                <span className="text-lg font-black tracking-wider text-white flex items-center gap-1.5">
-                  {config.brandName}
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]" />
-                </span>
-              </Link>
+              <BrandLogo size="lg" className="mb-4" />
 
               <p className="text-xs text-zinc-300 leading-relaxed mb-6 max-w-sm font-normal">
                 {config.tagline}. Dedicated to climate-controlled vehicle protection, precision self-healing film installation, and concours-grade optical paint restoration.

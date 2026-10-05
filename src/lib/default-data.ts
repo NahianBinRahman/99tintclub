@@ -9,7 +9,7 @@ import { SiteConfig } from "@/types";
  */
 
 export const initialSiteConfig: SiteConfig = {
-  brandName: "OUTUMN",
+  brandName: "$99 TINT CLUB",
   tagline: "Ultra Bespoke Automotive Care & Protection",
   heroBadge: "Bespoke Motorsport Detailing Lab",
   heroTitleLine1: "PERFECTION",

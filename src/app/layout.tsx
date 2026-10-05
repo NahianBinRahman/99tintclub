@@ -20,7 +20,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "OUTUMN STUDIO | Bespoke Motorsport Detailing & Ceramic Protection",
+  title: "$99 TINT CLUB | Bespoke Automotive Detailing & Ceramic Protection",
   description:
     "Luxury automotive studio specializing in self-healing paint protection film (PPF), advanced ceramic coatings, and precision multi-stage paint restoration.",
   keywords: [
