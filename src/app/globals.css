@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #07080c;
+    --bg-card: rgba(18, 20, 28, 0.7);
+    --bg-card-hover: rgba(28, 30, 42, 0.88);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-glass-hover: rgba(255, 255, 255, 0.22);
+    
+    /* Refined Luxury Hypercar Color Tokens */
+    --accent-primary: #ef4444;       /* Velocity Red */
+    --accent-secondary: #f59e0b;     /* Solar Amber */
+    --accent-tertiary: #06b6d4;      /* Cyber Cyan */
+    --accent-glow: rgba(239, 68, 68, 0.22);
+    --accent-glow-amber: rgba(245, 158, 11, 0.2);
+    --accent-glow-cyan: rgba(6, 182, 212, 0.2);
+    --accent-gradient: linear-gradient(135deg, #ef4444 0%, #f59e0b 60%, #e11d48 100%);
+    --font-scale: 1rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #e2e8f0;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2533;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333d52;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.75), 0 0 15px -4px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Subtle Technical Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Atmospheric Ambient Glow Orbs - Softer & Restrained */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Specular Metallic Shimmer Text */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(120deg, #ffffff 15%, #fca5a5 45%, #f59e0b 75%, #ffffff 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 7s linear infinite;
+}
+
+/* Neon Glow Outline */
+.neon-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* 3D Card Hover Perspective */
+.perspective-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+/* Accessibility: Focus Rings & Reduced Motion */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

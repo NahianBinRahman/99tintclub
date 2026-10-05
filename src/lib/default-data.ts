@@ -1,0 +1,275 @@
+import { SiteConfig } from "@/types";
+
+/**
+ * Default Site Configuration for Outumn Studio Detailing
+ * 
+ * NOTE: Factual business figures (vehicle counts, location details, warranties,
+ * and client testimonials) are structured here for convenient updating by the owner.
+ * Any unverified metrics are clearly labeled for client confirmation.
+ */
+
+export const initialSiteConfig: SiteConfig = {
+  brandName: "OUTUMN",
+  tagline: "Ultra Bespoke Automotive Care & Protection",
+  heroBadge: "Bespoke Motorsport Detailing Lab",
+  heroTitleLine1: "PERFECTION",
+  heroTitleHighlight: "RE-ENGINEERED",
+  heroTitleLine2: "FOR HYPERCARS & LUXURY",
+  heroDescription:
+    "Elevating automotive elegance through precision ceramic coatings, premium self-healing PPF, and multi-stage optical paint restoration in a controlled environment.",
+  phone: "+1 (800) 792-6682",
+  email: "concierge@outumnmotors.com",
+  address: "9400 Wilshire Blvd, Beverly Hills, CA 90212",
+  workingHours: "Mon - Sat: 8:00 AM - 7:00 PM (Sunday by Appointment)",
+  emergencyHotline: "+1 (800) 998-3824",
+  heroSupercarImage: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
+  theme: {
+    accent: "apex-combo",
+    fontSize: "normal",
+    enableGridBackground: true,
+    enableAmbientGlow: true,
+    cardGlassOpacity: 65,
+  },
+  // Simplified primary navigation per requirements
+  navItems: [
+    { id: "1", label: "Home", href: "#hero", order: 1, isVisible: true },
+    { id: "2", label: "Services", href: "#services", order: 2, isVisible: true },
+    { id: "3", label: "Projects", href: "#projects", order: 3, isVisible: true },
+    { id: "4", label: "About", href: "#about", order: 4, isVisible: true },
+    { id: "5", label: "Reviews", href: "#reviews", order: 5, isVisible: true },
+    { id: "6", label: "Contact", href: "#contact", order: 6, isVisible: true },
+  ],
+  // Standardized business stats (pending final client verification)
+  stats: [
+    { id: "s1", label: "Vehicles Enhanced", value: "1,500", suffix: "+", description: "Supercars, sports & luxury models serviced" },
+    { id: "s2", label: "Installation Bays", value: "Precision", suffix: " Lab", description: "Climate-controlled, dust-filtered environment" },
+    { id: "s3", label: "Optical Clarity", value: "99+", suffix: " GU", description: "High-gloss specular reflectance index" },
+    { id: "s4", label: "Client Satisfaction", value: "99", suffix: "%", description: "Private collector and enthusiast referrals" },
+  ],
+  services: [
+    {
+      id: "srv-1",
+      title: "Self-Healing PPF Stealth Armor",
+      subtitle: "Ultimate Road Surface Defense",
+      category: "PPF Protection Film",
+      price: "$1,850",
+      duration: "2-3 Days",
+      popular: true,
+      badge: "Flagship Protection",
+      description:
+        "Premium elastomeric polyurethane protective film that self-heals light wash swirls and shields against road stone chips under ambient warmth.",
+      image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "Manufacturer-Backed Warranty",
+        "Hydrophobic Topcoat Formulation",
+        "Computer-Cut Precision Panel Templates",
+        "High-Gloss or Satin Matte Options",
+        "Impact & Rock Chip Defense",
+      ],
+    },
+    {
+      id: "srv-2",
+      title: "Graphene & Ceramic Matrix Shield",
+      subtitle: "Hyper-Hydrophobic Surface Matrix",
+      category: "Ceramic Coating",
+      price: "$1,200",
+      duration: "24-36 Hours",
+      popular: true,
+      badge: "Extreme Gloss",
+      description:
+        "High-solids ceramic formulation infused with graphene for thermal resilience, chemical barrier resistance, and deep, reflective gloss.",
+      image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "Multi-Year Verified Surface Protection",
+        "High Water Contact Angle Hydrophobic Beading",
+        "UV & Chemical Etching Defense",
+        "Includes Wheel Faces & Caliper Coating",
+        "Digital Service Documentation Log",
+      ],
+    },
+    {
+      id: "srv-3",
+      title: "Multi-Stage Paint Restoration",
+      subtitle: "Optical Compounding & Polishing",
+      category: "Paint Correction",
+      price: "$850",
+      duration: "1-2 Days",
+      description:
+        "Targeted multi-stage rotary compounding and finishing polish designed to eliminate wash swirls, light etching, and surface hazing while conserving clearcoat.",
+      image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "Stage 2 or Stage 3 Precision Compounding",
+        "Ultrasonic Paint Thickness Gauging",
+        "Fine Jeweling Polish for Deep Mirror Reflection",
+        "Orange Peel Texture Reduction Available",
+        "Comprehensive Decontamination Wash Included",
+      ],
+    },
+    {
+      id: "srv-4",
+      title: "Bespoke Leather & Interior Preservation",
+      subtitle: "Luxury Cabin Restoration",
+      category: "Interior Detailing",
+      price: "$550",
+      duration: "6-8 Hours",
+      description:
+        "Gentle pH-balanced deep extraction, premium leather nourishment, Alcantara revival, and hydrophobic ceramic shielding against dye transfer.",
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "Nappa & Semi-Aniline Leather Conditioning",
+        "Alcantara Deep Cleaning & Nap Restoration",
+        "Anti-Dye Transfer Protective Barrier",
+        "Interior Cabin Deodorization & Refresh",
+        "Fine Carbon Fiber & Matte Trim Conditioning",
+      ],
+    },
+    {
+      id: "srv-5",
+      title: "Ceramic IR Heat Shield Window Tint",
+      subtitle: "Nano-Ceramic Spectral Clarity",
+      category: "Window Tint",
+      price: "$480",
+      duration: "3-4 Hours",
+      description:
+        "High-performance nano-ceramic automotive film blocking harmful UV rays and significant solar heat without electronic signal interference.",
+      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "99% Harmful UV Ray Rejection",
+        "Significant Infrared Heat Reduction",
+        "Zero GPS or Cellular Interference",
+        "Factory-Style Non-Reflective Neutral Tint",
+        "Professional Bubble-Free Installation Guarantee",
+      ],
+    },
+    {
+      id: "srv-6",
+      title: "Apex Full Studio Concierge",
+      subtitle: "The Comprehensive Preservation Package",
+      category: "Full Concierge Package",
+      price: "$3,400",
+      duration: "3-4 Days",
+      popular: false,
+      badge: "Full Preservation",
+      description:
+        "Our complete vehicle transformation: Full front PPF wrap, multi-stage correction, ceramic coating on paint, wheels, and glass, plus bespoke interior preservation.",
+      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop",
+      features: [
+        "Full Front PPF + Multi-Stage Paint Correction",
+        "Dual-Layer Ceramic Coating on Paintwork",
+        "Wheels-Off Caliper & Barrel Ceramic Shield",
+        "Complete Interior Leather & Trim Protection",
+        "Enclosed White-Glove Transport Available",
+      ],
+    },
+  ],
+  projects: [
+    {
+      id: "proj-1",
+      title: "Porsche 911 GT3 RS in Shark Blue",
+      category: "Porsche",
+      carModel: "911 GT3 RS (992)",
+      year: "2024",
+      glossRating: "99.9 GU",
+      treatment: "Full Body Self-Healing PPF + Ceramic Topcoat",
+      image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Track Armor", "PPF", "Ceramic Coating", "Weissach"],
+    },
+    {
+      id: "proj-2",
+      title: "Ferrari F8 Tributo in Rosso Corsa",
+      category: "Ferrari",
+      carModel: "F8 Tributo V8 Bi-Turbo",
+      year: "2023",
+      glossRating: "99.7 GU",
+      treatment: "Stage 2 Paint Correction & Ceramic Sealant",
+      image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Paint Correction", "Liquid Mirror", "Rosso Corsa"],
+    },
+    {
+      id: "proj-3",
+      title: "Lamborghini Huracán STO Matte Verde",
+      category: "Lamborghini",
+      carModel: "Huracán STO",
+      year: "2024",
+      glossRating: "Satin Shield",
+      treatment: "Full Stealth Satin PPF & Carbon Aero Ceramic",
+      image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Stealth PPF", "V10 Squadra", "Carbon Treatment"],
+    },
+    {
+      id: "proj-4",
+      title: "Mercedes-AMG G63 in Obsidian Black",
+      category: "Mercedes-AMG",
+      carModel: "G63 Biturbo AMG",
+      year: "2024",
+      glossRating: "99.4 GU",
+      treatment: "Full Front PPF + Multi-Stage Polish + Leather Ceramic",
+      image: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Ceramic Protection", "Black Edition", "Executive SUV"],
+    },
+    {
+      id: "proj-5",
+      title: "McLaren 720S Spider in Papaya Spark",
+      category: "McLaren",
+      carModel: "720S Spider",
+      year: "2023",
+      glossRating: "99.8 GU",
+      treatment: "Full PPF Wrap & Infrared Ceramic Tinting",
+      image: "https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Hypercar Care", "Ceramic Tint", "Papaya Pearl"],
+    },
+    {
+      id: "proj-6",
+      title: "BMW M4 Competition in Isle of Man Green",
+      category: "BMW M",
+      carModel: "M4 Competition xDrive",
+      year: "2024",
+      glossRating: "99.5 GU",
+      treatment: "Two-Stage Paint Correction & Ceramic Matrix",
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1200&auto=format&fit=crop",
+      tags: ["Ceramic Matrix", "M Power", "Paint Restoration"],
+    },
+  ],
+  // Testimonial entries: clearly marked as demo templates awaiting verified client reviews
+  testimonials: [
+    {
+      id: "t1",
+      name: "Marcus Vance",
+      role: "Porsche Club Member",
+      car: "Porsche 911 GT3 RS",
+      rating: 5,
+      platform: "Google Review",
+      verified: false, // marked false until verified by client
+      comment:
+        "The attention to detail at Outumn is exceptional. The PPF installation on my GT3 RS has seamlessly wrapped edges, and the paint correction gave the Shark Blue finish incredible depth. Very professional team.",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+      date: "October 2024",
+    },
+    {
+      id: "t2",
+      name: "Sophia Rodriguez",
+      role: "Verified Client",
+      car: "Mercedes-AMG G63",
+      rating: 5,
+      platform: "Client Direct",
+      verified: false, // marked false until verified by client
+      comment:
+        "Outumn arranged enclosed transport for my G63 and returned it in pristine condition. The ceramic coating makes regular maintenance effortless, and the gloss in sunlight is remarkable.",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
+      date: "September 2024",
+    },
+    {
+      id: "t3",
+      name: "Alexander Sterling",
+      role: "Track & Enthusiast Driver",
+      car: "McLaren 720S",
+      rating: 5,
+      platform: "Google Review",
+      verified: false, // marked false until verified by client
+      comment:
+        "Working with carbon fiber components and thin performance lacquers requires true expertise. The Outumn team treated my McLaren with surgical care and kept me updated with photos throughout the process.",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      date: "November 2024",
+    },
+  ],
+};
