@@ -13,6 +13,7 @@ import { ArVrStudio } from "@/components/ar-vr-studio";
 import { Footer } from "@/components/footer";
 import { BookingModal } from "@/components/booking-modal";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { MobileDock } from "@/components/mobile-dock";
 import { ServiceItem } from "@/types";
 
 export default function HomePage() {
@@ -63,6 +64,8 @@ export default function HomePage() {
       </main>
 
       <Footer />
+
+      <MobileDock onOpenBooking={handleOpenGeneralBooking} />
 
       <BookingModal
         isOpen={bookingOpen}

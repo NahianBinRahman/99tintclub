@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/about-section";
 import { Footer } from "@/components/footer";
 import { BookingModal } from "@/components/booking-modal";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { MobileDock } from "@/components/mobile-dock";
 
 export default function AboutPage() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -20,6 +21,8 @@ export default function AboutPage() {
       </main>
 
       <Footer />
+
+      <MobileDock onOpenBooking={() => setBookingOpen(true)} />
 
       <BookingModal
         isOpen={bookingOpen}

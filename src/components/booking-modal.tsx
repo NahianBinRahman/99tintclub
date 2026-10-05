@@ -63,6 +63,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Persist booking to localStorage for Admin Dashboard
+    try {
+      const existing = JSON.parse(localStorage.getItem("outumn_bookings") || "[]");
+      const newBooking = {
+        id: `BK-${Date.now().toString().slice(-5)}`,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        vehicle: formData.vehicle || "Porsche 911 GT3",
+        service: formData.service,
+        date: formData.date || new Date().toISOString().split("T")[0],
+        price: estimatedPrice ? `$${estimatedPrice}` : "$2,400",
+        enclosedTransport: formData.enclosedTransport,
+        status: "Pending Review",
+        createdAt: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }),
+      };
+      localStorage.setItem("outumn_bookings", JSON.stringify([newBooking, ...existing]));
+    } catch {
+      // localStorage may fail in private mode
+    }
+
     // Trigger celebration confetti
     try {
       confetti({
