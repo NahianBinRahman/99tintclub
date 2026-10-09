@@ -48,7 +48,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07080c] text-slate-100 flex flex-col selection:bg-[var(--accent-primary)] selection:text-black">
+    <div className="min-h-screen bg-[#1A1B1B] text-slate-100 flex flex-col selection:bg-[var(--accent-primary)] selection:text-black">
       <ScrollProgress />
       <Navbar onOpenBooking={handleOpenGeneralBooking} />
 

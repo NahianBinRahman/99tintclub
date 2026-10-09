@@ -16,7 +16,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#07080c",
+  themeColor: "#1A1B1B",
 };
 
 export const metadata = {
@@ -31,10 +31,10 @@ export const metadata = {
     "Paint Correction",
     "Hypercar Detailing",
     "Porsche Detailing",
-    "Outumn Studio",
-    "JoshieKnocks",
+    "$99tintclub",
+    "$99 Tint Club",
   ],
-  authors: [{ name: "Outumn Motorsport Studio" }],
+  authors: [{ name: "$99 Tint Club" }],
 };
 
 export default function RootLayout({
@@ -47,7 +47,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#07080c] text-white">
+      <body className="min-h-full flex flex-col bg-[#1A1B1B] text-white">
         <SiteProvider>{children}</SiteProvider>
       </body>
     </html>

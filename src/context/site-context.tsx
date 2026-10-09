@@ -39,15 +39,16 @@ interface SiteContextType {
   importConfigJson: (jsonString: string) => boolean;
 }
 
-const STORAGE_KEY = "tintclub_joshieknocks_config_v1";
+const STORAGE_KEY = "99tintclub_config_v1";
+const LEGACY_STORAGE_KEY = "tintclub_joshieknocks_config_v1";
 
 const SiteContext = createContext<SiteContextType | undefined>(undefined);
 
 const ACCENT_COLOR_MAP: Record<AccentColorTheme, { primary: string; glow: string; gradient: string }> = {
   "apex-combo": {
-    primary: "#ef4444",
-    glow: "rgba(239, 68, 68, 0.45)",
-    gradient: "linear-gradient(135deg, #ef4444 0%, #f59e0b 50%, #06b6d4 100%)",
+    primary: "#5EE07C",
+    glow: "rgba(94, 224, 124, 0.45)",
+    gradient: "linear-gradient(135deg, #5EE07C 0%, #34d399 50%, #10b981 100%)",
   },
   red: {
     primary: "#ef4444",
@@ -55,14 +56,14 @@ const ACCENT_COLOR_MAP: Record<AccentColorTheme, { primary: string; glow: string
     gradient: "linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%)",
   },
   amber: {
-    primary: "#f59e0b",
-    glow: "rgba(245, 158, 11, 0.4)",
-    gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%)",
+    primary: "#5EE07C",
+    glow: "rgba(94, 224, 124, 0.4)",
+    gradient: "linear-gradient(135deg, #5EE07C 0%, #34d399 50%, #10b981 100%)",
   },
   cyan: {
-    primary: "#06b6d4",
-    glow: "rgba(6, 182, 212, 0.4)",
-    gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%)",
+    primary: "#5EE07C",
+    glow: "rgba(94, 224, 124, 0.4)",
+    gradient: "linear-gradient(135deg, #5EE07C 0%, #34d399 50%, #10b981 100%)",
   },
   violet: {
     primary: "#8b5cf6",
@@ -70,9 +71,9 @@ const ACCENT_COLOR_MAP: Record<AccentColorTheme, { primary: string; glow: string
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #5b21b6 100%)",
   },
   emerald: {
-    primary: "#10b981",
-    glow: "rgba(16, 185, 129, 0.4)",
-    gradient: "linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)",
+    primary: "#5EE07C",
+    glow: "rgba(94, 224, 124, 0.4)",
+    gradient: "linear-gradient(135deg, #5EE07C 0%, #34d399 50%, #059669 100%)",
   },
 };
 
@@ -83,7 +84,7 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Load from localStorage on mount
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
         setConfig(parsed);
@@ -103,7 +104,7 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       // Update dynamic CSS variables on document root
       const root = document.documentElement;
-      const themeData = ACCENT_COLOR_MAP[config.theme.accent] || ACCENT_COLOR_MAP.amber;
+      const themeData = ACCENT_COLOR_MAP[config.theme.accent] || ACCENT_COLOR_MAP["apex-combo"];
       root.style.setProperty("--accent-primary", themeData.primary);
       root.style.setProperty("--accent-glow", themeData.glow);
       root.style.setProperty("--accent-gradient", themeData.gradient);

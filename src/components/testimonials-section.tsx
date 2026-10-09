@@ -18,7 +18,7 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#07080c]">
+    <section id="reviews" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#1A1B1B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -30,7 +30,7 @@ export const TestimonialsSection: React.FC = () => {
             CLIENT <span className="shimmer-text">EXPERIENCES</span>
           </h2>
           <p className="text-zinc-300 text-sm sm:text-base font-normal leading-relaxed">
-            Real feedback from supercar owners, enthusiasts, and collectors who trust Outumn Studio with their vehicles.
+            Real feedback from supercar owners, enthusiasts, and collectors who trust $99 Tint Club with their vehicles.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export const TestimonialsSection: React.FC = () => {
                     <span className="text-xs sm:text-sm font-bold text-white uppercase truncate">{t.name}</span>
                     {t.verified && (
                       <span title="Verified Detailing Client" className="inline-flex items-center">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#5EE07C] flex-shrink-0" />
                       </span>
                     )}
                   </div>

@@ -10,7 +10,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section id="about" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#07080c]">
+    <section id="about" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#1A1B1B]">
       {/* Subtle ambient lighting */}
       <div
         className="glow-orb top-1/4 right-0 w-[450px] h-[450px] opacity-10"
@@ -18,7 +18,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
       />
       <div
         className="glow-orb bottom-10 left-10 w-[400px] h-[400px] opacity-05"
-        style={{ background: "rgba(6, 182, 212, 0.2)" }}
+        style={{ background: "var(--accent-glow)" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

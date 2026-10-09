@@ -65,7 +65,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     // Persist booking to localStorage for Admin Dashboard
     try {
-      const existing = JSON.parse(localStorage.getItem("outumn_bookings") || "[]");
+      const existing = JSON.parse(localStorage.getItem("tintclub_bookings") || "[]");
       const newBooking = {
         id: `BK-${Date.now().toString().slice(-5)}`,
         name: formData.name,
@@ -74,12 +74,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         vehicle: formData.vehicle || "Porsche 911 GT3",
         service: formData.service,
         date: formData.date || new Date().toISOString().split("T")[0],
-        price: estimatedPrice ? `$${estimatedPrice}` : "$2,400",
+        price: "Custom Consultation Quote",
         enclosedTransport: formData.enclosedTransport,
         status: "Pending Review",
         createdAt: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }),
       };
-      localStorage.setItem("outumn_bookings", JSON.stringify([newBooking, ...existing]));
+      localStorage.setItem("tintclub_bookings", JSON.stringify([newBooking, ...existing]));
     } catch {
       // localStorage may fail in private mode
     }
@@ -90,7 +90,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         particleCount: 80,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ["#ef4444", "#f59e0b", "#06b6d4"],
+        colors: ["#5EE07C", "#34d399", "#ffffff"],
       });
     } catch {
       // fallback
@@ -111,7 +111,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       aria-label="Book Detailing Appointment"
       className="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-xl rounded-2xl glass-panel border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden my-auto animate-in zoom-in-95 duration-200 bg-[#0c0e16]">
+      <div className="relative w-full max-w-xl rounded-2xl glass-panel border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden my-auto animate-in zoom-in-95 duration-200 bg-[#252525]">
         {/* Top Gradient Accent Line */}
         <div
           className="absolute top-0 left-0 right-0 h-1"
@@ -131,34 +131,32 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <form onSubmit={handleSubmit} className="p-6 sm:p-7">
             <div className="mb-5">
               <span className="text-[10px] font-mono uppercase text-[var(--accent-primary)] font-bold tracking-widest block mb-1">
-                CONCIERGE SCHEDULING
+                WINDOW TINTING & PROTECTION
               </span>
               <h3 className="text-2xl font-black uppercase text-white tracking-tight">
-                BOOK BESPOKE <span className="shimmer-text">DETAILING</span>
+                GET IN <span className="shimmer-text">TOUCH</span>
               </h3>
               <p className="text-xs text-zinc-300 mt-1 font-normal">
-                Complete your details to request intake scheduling at our climate-controlled studio.
+                Professional window tinting in Yucaipa and the Inland Empire. Complete your details below for a free estimate.
               </p>
             </div>
 
-            {estimatedPrice && (
-              <div className="p-3 rounded-xl bg-white/[0.04] border border-[var(--accent-primary)]/40 mb-5 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] uppercase font-mono text-zinc-400 block">
-                    Estimated Investment
-                  </span>
-                  <span className="text-lg font-black text-white font-mono">
-                    ${estimatedPrice} <span className="text-xs text-zinc-400 font-normal">USD</span>
-                  </span>
-                </div>
-                <div className="text-right">
-                  <span className="text-[11px] font-mono text-zinc-300 block">
-                    Pre-calculated Modules
-                  </span>
-                  <span className="text-[10px] text-zinc-400">Final inspection required</span>
-                </div>
+            <div className="p-3 rounded-xl bg-white/[0.04] border border-[var(--accent-primary)]/40 mb-5 flex items-center justify-between">
+              <div>
+                <span className="text-[10px] uppercase font-mono text-zinc-400 block">
+                  Service Estimate
+                </span>
+                <span className="text-sm font-black text-white font-mono uppercase">
+                  Free Inspection & Quote
+                </span>
               </div>
-            )}
+              <div className="text-right">
+                <span className="text-[11px] font-mono text-[#5EE07C] font-semibold block">
+                  No Obligation
+                </span>
+                <span className="text-[10px] text-zinc-400">Yucaipa & Inland Empire</span>
+              </div>
+            </div>
 
             <div className="space-y-3.5">
               {/* Full Name */}

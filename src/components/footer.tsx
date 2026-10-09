@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer id="contact" className="relative bg-[#050608] border-t border-white/[0.08] pt-16 pb-12 overflow-hidden">
+      <footer id="contact" className="relative bg-[#1A1B1B] border-t border-white/[0.08] pt-16 pb-12 overflow-hidden">
         {/* Ambient Glow */}
         <div
           className="glow-orb -bottom-20 left-1/3 w-[600px] h-[300px] opacity-10"
@@ -77,8 +77,8 @@ export const Footer: React.FC = () => {
 
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-zinc-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>Beverly Hills Facility</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5EE07C]" />
+                  <span>Yucaipa & Inland Empire Facility</span>
                 </span>
               </div>
             </div>
@@ -159,8 +159,8 @@ export const Footer: React.FC = () => {
                 </p>
 
                 {subscribed ? (
-                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex items-center gap-2 text-xs">
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-emerald-400" />
+                  <div className="p-3 rounded-xl bg-[#5EE07C]/10 border border-[#5EE07C]/30 text-[#5EE07C] flex items-center gap-2 text-xs">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#5EE07C]" />
                     <span>Thank you. You are registered for VIP announcements.</span>
                   </div>
                 ) : (
@@ -244,7 +244,7 @@ export const Footer: React.FC = () => {
           aria-label={activeModal === "privacy" ? "Privacy Policy" : "Terms & Conditions"}
           className="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
         >
-          <div className="relative w-full max-w-2xl rounded-2xl glass-panel border border-white/20 shadow-2xl p-6 sm:p-8 bg-[#0c0e16] max-h-[85vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl rounded-2xl glass-panel border border-white/20 shadow-2xl p-6 sm:p-8 bg-[#252525] max-h-[85vh] overflow-y-auto">
             <button
               onClick={() => setActiveModal(null)}
               className="absolute top-4 right-4 p-2 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-white"
@@ -263,7 +263,7 @@ export const Footer: React.FC = () => {
                 </h3>
                 <div className="text-xs sm:text-sm text-zinc-300 space-y-3 leading-relaxed font-normal">
                   <p>
-                    At Outumn Studio Detailing, we respect the privacy of our clientele. Any information collected during appointment requests, vehicle consultations, or newsletter subscriptions is utilized exclusively to provide high-standard concierge detailing services.
+                    At $99 Tint Club, we respect the privacy of our clientele. Any information collected during appointment requests, vehicle consultations, or newsletter subscriptions is utilized exclusively to provide high-standard concierge detailing services.
                   </p>
                   <p>
                     We do not sell, rent, or distribute personal customer records or vehicle registration data to third-party marketing entities. Information collected via digital inquiries is encrypted and stored securely.

@@ -211,7 +211,7 @@ export default function AdminPage() {
   // Check existing session on mount
   useEffect(() => {
     try {
-      const storedAuth = sessionStorage.getItem("outumn_admin_token");
+      const storedAuth = sessionStorage.getItem("tintclub_admin_token");
       if (storedAuth === "authenticated") {
         setIsAuthenticated(true);
       }
@@ -225,7 +225,7 @@ export default function AdminPage() {
   // Load and sync bookings
   useEffect(() => {
     try {
-      const stored = localStorage.getItem("outumn_bookings");
+      const stored = localStorage.getItem("tintclub_bookings");
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
@@ -234,7 +234,7 @@ export default function AdminPage() {
         }
       }
       setBookings(DEFAULT_BOOKINGS);
-      localStorage.setItem("outumn_bookings", JSON.stringify(DEFAULT_BOOKINGS));
+      localStorage.setItem("tintclub_bookings", JSON.stringify(DEFAULT_BOOKINGS));
     } catch {
       setBookings(DEFAULT_BOOKINGS);
     }
@@ -243,7 +243,7 @@ export default function AdminPage() {
   const saveBookingsList = (updated: BookingRecord[]) => {
     setBookings(updated);
     try {
-      localStorage.setItem("outumn_bookings", JSON.stringify(updated));
+      localStorage.setItem("tintclub_bookings", JSON.stringify(updated));
     } catch {
       // fallback
     }
@@ -260,11 +260,11 @@ export default function AdminPage() {
       setIsAuthenticated(true);
       setAuthError(null);
       try {
-        sessionStorage.setItem("outumn_admin_token", "authenticated");
+        sessionStorage.setItem("tintclub_admin_token", "authenticated");
       } catch {
         // fallback
       }
-      showToast("Access Granted. Welcome to Outumn Studio CMS.");
+      showToast("Access Granted. Welcome to $99 Tint Club CMS.");
     } else {
       setAuthError("Invalid security key. Authentication denied.");
     }
@@ -274,7 +274,7 @@ export default function AdminPage() {
     setIsAuthenticated(false);
     setPasswordInput("");
     try {
-      sessionStorage.removeItem("outumn_admin_token");
+      sessionStorage.removeItem("tintclub_admin_token");
     } catch {
       // fallback
     }
@@ -333,7 +333,7 @@ export default function AdminPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `outumn-studio-config-${Date.now()}.json`;
+    a.download = `tintclub-config-${Date.now()}.json`;
     a.click();
     showToast("Studio configuration exported successfully.");
   };
@@ -476,7 +476,7 @@ export default function AdminPage() {
     bookingFilter === "All" ? bookings : bookings.filter((b) => b.status === bookingFilter);
 
   return (
-    <div className="min-h-screen bg-[#06070a] text-zinc-100 flex flex-col font-sans selection:bg-[var(--accent-primary)] selection:text-black">
+    <div className="min-h-screen bg-[#1A1B1B] text-zinc-100 flex flex-col font-sans selection:bg-[var(--accent-primary)] selection:text-black">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-6 right-6 z-50 px-4 py-3 rounded-xl glass-panel border border-[var(--accent-primary)]/50 shadow-2xl text-xs font-bold text-white flex items-center gap-2 animate-in slide-in-from-top-2">
@@ -486,7 +486,7 @@ export default function AdminPage() {
       )}
 
       {/* Top Admin Header Bar */}
-      <header className="sticky top-0 z-40 bg-[#090b14]/95 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-[#252525]/95 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link
             href="/"
@@ -631,9 +631,9 @@ export default function AdminPage() {
               <div className="glass-panel p-5 rounded-2xl border border-white/10 relative overflow-hidden">
                 <div className="flex items-center justify-between text-xs text-zinc-400 mb-2 font-mono uppercase">
                   <span>Client Rating</span>
-                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <Sparkles className="w-4 h-4 text-[var(--accent-primary)]" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">5.0 ★</div>
+                <div className="text-2xl sm:text-3xl font-black text-[var(--accent-primary)] font-mono">5.0 ★</div>
                 <div className="text-[11px] text-zinc-400 mt-1">
                   100% verified collector satisfaction
                 </div>
@@ -1084,7 +1084,7 @@ export default function AdminPage() {
                         <input
                           type="text"
                           value={editingService.category}
-                          onChange={(e) => setEditingService({ ...editingService, category: e.target.value })}
+                          onChange={(e) => setEditingService({ ...editingService, category: e.target.value as any })}
                           className="w-full px-3 py-2 rounded-xl bg-white/[0.04] border border-white/10 text-white"
                         />
                       </div>
@@ -1394,6 +1394,8 @@ export default function AdminPage() {
                     rating: 5,
                     verified: true,
                     platform: "Google Business",
+                    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+                    date: new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" }),
                   });
                   setIsNewReview(true);
                 }}
@@ -1410,7 +1412,7 @@ export default function AdminPage() {
                 <div key={rev.id} className="glass-panel p-5 rounded-2xl border border-white/10 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <div className="flex text-amber-400 text-xs">{"★".repeat(rev.rating)}</div>
+                      <div className="flex text-[var(--accent-primary)] text-xs">{"★".repeat(rev.rating)}</div>
                       {rev.platform && (
                         <span className="text-[10px] font-mono text-zinc-400 bg-white/5 px-2 py-0.5 rounded">
                           {rev.platform}
@@ -1462,7 +1464,8 @@ export default function AdminPage() {
                     id: `nav-${Date.now()}`,
                     label: "",
                     href: "#",
-                    hasDropdown: false,
+                    order: config.navItems.length + 1,
+                    isVisible: true,
                   });
                   setIsNewMenu(true);
                 }}
@@ -1771,11 +1774,11 @@ export default function AdminPage() {
               <h3 className="text-base font-bold uppercase text-white mb-4">Color Palette & Accent Lighting</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
                 {[
-                  { id: "apex-combo", label: "Apex Tricolor", hex: "linear-gradient(135deg, #ef4444, #f59e0b, #06b6d4)" },
-                  { id: "red", label: "Apex Red", hex: "#ef4444" },
+                  { id: "apex-combo", label: "Emerald Mint (Hero)", hex: "linear-gradient(135deg, #5EE07C, #34d399, #10b981)" },
+                  { id: "emerald", label: "Pure Mint (#5EE07C)", hex: "#5EE07C" },
                   { id: "cyan", label: "Laguna Cyan", hex: "#06b6d4" },
+                  { id: "red", label: "Apex Red", hex: "#ef4444" },
                   { id: "amber", label: "Monza Amber", hex: "#f59e0b" },
-                  { id: "emerald", label: "Acid Green", hex: "#10b981" },
                   { id: "violet", label: "Stealth Titanium", hex: "#8b5cf6" },
                 ].map((th) => (
                   <button

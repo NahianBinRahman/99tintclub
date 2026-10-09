@@ -2,20 +2,20 @@
 
 @layer base {
   :root {
-    --bg-dark: #07080c;
-    --bg-card: rgba(18, 20, 28, 0.7);
-    --bg-card-hover: rgba(28, 30, 42, 0.88);
+    --bg-dark: #1A1B1B;
+    --bg-card: #252525;
+    --bg-card-hover: #2e2f30;
     --border-glass: rgba(255, 255, 255, 0.08);
-    --border-glass-hover: rgba(255, 255, 255, 0.22);
+    --border-glass-hover: rgba(94, 224, 124, 0.28);
     
-    /* Refined Luxury Hypercar Color Tokens */
-    --accent-primary: #ef4444;       /* Velocity Red */
-    --accent-secondary: #f59e0b;     /* Solar Amber */
-    --accent-tertiary: #06b6d4;      /* Cyber Cyan */
-    --accent-glow: rgba(239, 68, 68, 0.22);
-    --accent-glow-amber: rgba(245, 158, 11, 0.2);
-    --accent-glow-cyan: rgba(6, 182, 212, 0.2);
-    --accent-gradient: linear-gradient(135deg, #ef4444 0%, #f59e0b 60%, #e11d48 100%);
+    /* Elegant Mint/Emerald Color Tokens */
+    --accent-primary: #5EE07C;
+    --accent-secondary: #34d399;
+    --accent-tertiary: #10b981;
+    --accent-glow: rgba(94, 224, 124, 0.35);
+    --accent-glow-amber: rgba(94, 224, 124, 0.2);
+    --accent-glow-cyan: rgba(94, 224, 124, 0.2);
+    --accent-gradient: linear-gradient(135deg, #5EE07C 0%, #34d399 50%, #10b981 100%);
     --font-scale: 1rem;
   }
 
@@ -39,16 +39,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080a0f;
+  background: #141515;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f2533;
+  background: #2e2f30;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333d52;
+  background: #5EE07C;
 }
 
 /* Glassmorphism Classes */
@@ -100,7 +100,7 @@
 }
 
 .shimmer-text {
-  background: linear-gradient(120deg, #ffffff 15%, #fca5a5 45%, #f59e0b 75%, #ffffff 100%);
+  background: linear-gradient(120deg, #ffffff 15%, #a7f3d0 45%, #5EE07C 75%, #ffffff 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -108,7 +108,7 @@
   animation: shimmer 7s linear infinite;
 }
 
-/* Bespoke Thermal-Metallic Gradient for "RE-ENGINEERED" */
+/* Bespoke Emerald Gradient */
 @keyframes thermal-sweep {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -116,7 +116,7 @@
 }
 
 .text-thermal-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #fca5a5 25%, #ef4444 55%, #f59e0b 80%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 35%, #5EE07C 70%, #ffffff 100%);
   background-size: 250% 250%;
   color: transparent;
   -webkit-background-clip: text;
@@ -150,15 +150,15 @@
 @keyframes hotspot-pulse {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6);
+    box-shadow: 0 0 0 0 rgba(94, 224, 124, 0.6);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(6, 182, 212, 0);
+    box-shadow: 0 0 0 10px rgba(94, 224, 124, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+    box-shadow: 0 0 0 0 rgba(94, 224, 124, 0);
   }
 }
 
@@ -178,6 +178,20 @@
 
 .animate-ambient-drift {
   animation: ambient-drift 18s ease-in-out infinite;
+}
+
+/* Floating Crown Doodle Animation */
+@keyframes float-crown {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-2deg);
+  }
+}
+
+.animate-float-crown {
+  animation: float-crown 5s ease-in-out infinite;
 }
 
 /* Neon Glow Outline */

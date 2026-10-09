@@ -52,7 +52,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
   };
 
   return (
-    <section id="calculator" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06]">
+    <section id="calculator" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#1A1B1B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-mono uppercase tracking-widest text-[var(--accent-primary)] mb-3">
@@ -87,8 +87,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
                     onClick={() => setSelectedVehicle(vc)}
                     className={`p-3.5 rounded-xl border text-left transition-all duration-200 flex items-start justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] ${
                       selectedVehicle.id === vc.id
-                        ? "bg-white/[0.08] border-white/40 shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
-                        : "glass-panel border-white/[0.08] hover:border-white/20 hover:bg-white/[0.03]"
+                        ? "bg-[#252525] border-[#5EE07C] shadow-[0_0_16px_rgba(94,224,124,0.2)]"
+                        : "glass-panel border-white/[0.08] hover:border-white/20 hover:bg-[#252525]/60"
                     }`}
                   >
                     <div>
@@ -130,8 +130,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
                       }}
                       className={`p-4 rounded-xl border cursor-pointer select-none transition-all duration-200 flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] ${
                         isChecked
-                          ? "bg-white/[0.06] border-white/30 shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
-                          : "glass-panel border-white/[0.08] hover:border-white/20"
+                          ? "bg-[#252525] border-[#5EE07C] shadow-[0_0_16px_rgba(94,224,124,0.18)]"
+                          : "glass-panel border-white/[0.08] hover:border-white/20 hover:bg-[#252525]/60"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3 mb-2">
@@ -153,8 +153,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
 
                       <div className="flex items-center justify-between text-xs font-mono pt-2.5 border-t border-white/[0.06]">
                         <span className="text-zinc-400">Est. {addon.durationHours} hrs</span>
-                        <span className="text-white font-bold">
-                          ${Math.round(addon.basePrice * selectedVehicle.multiplier)}
+                        <span className="text-[#5EE07C] font-bold">
+                          Free Consultation
                         </span>
                       </div>
                     </div>
@@ -195,8 +195,8 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
                     className="flex items-center justify-between text-xs py-1.5 border-b border-white/[0.04]"
                   >
                     <span className="text-zinc-200 font-medium truncate pr-2">{opt.name}</span>
-                    <span className="font-mono text-white font-bold flex-shrink-0">
-                      ${Math.round(opt.basePrice * selectedVehicle.multiplier)}
+                    <span className="font-mono text-[#5EE07C] text-[11px] font-bold flex-shrink-0">
+                      Included in Spec
                     </span>
                   </div>
                 ))}
@@ -214,10 +214,10 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
               {/* Total & Action */}
               <div className="pt-2 border-t border-white/[0.08] mb-5">
                 <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-xs uppercase font-extrabold text-zinc-300">Estimated Investment</span>
+                  <span className="text-xs uppercase font-extrabold text-zinc-300">Consultation Quote</span>
                   <div className="text-right">
-                    <span className="text-2xl sm:text-3xl font-black text-white font-mono">${finalTotal}</span>
-                    <span className="text-[10px] text-zinc-400 block font-mono">USD • Tax Included</span>
+                    <span className="text-lg sm:text-xl font-black text-white font-mono uppercase">Custom Quote</span>
+                    <span className="text-[10px] text-[#5EE07C] block font-mono font-bold">100% Free Consultation</span>
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({ onProceedW
                 className="w-full py-3 rounded-xl font-bold uppercase tracking-wider text-xs text-black flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-200 hover:opacity-95 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 style={{ background: "var(--accent-gradient)" }}
               >
-                <span>Book Detailing</span>
+                <span>Get in touch</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

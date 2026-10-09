@@ -50,25 +50,25 @@ export const businessMetrics: BusinessMetrics = {
 export const businessInfo = {
   name: "$99 TINT CLUB",
   legalName: "$99 Tint Club LLC",
-  tagline: "Ultra Bespoke Automotive Care & Protection",
+  tagline: "Professional Window Tinting & Solar Protection",
   description:
-    "Luxury automotive studio specializing in precision paint protection film (PPF), multi-stage paint correction, and advanced ceramic coatings.",
-  phone: "+1 (800) 792-6682",
-  email: "concierge@outumnmotors.com",
-  address: "9400 Wilshire Blvd, Beverly Hills, CA 90212",
-  workingHours: "Mon - Sat: 8:00 AM - 7:00 PM (Sunday by Appointment)",
+    "Professional window tinting in Yucaipa and the Inland Empire. Reduce heat, glare, and UV exposure with premium window films for your vehicle, home, or business.",
+  phone: "+1 (909) 790-9988",
+  email: "concierge@99tintclub.com",
+  address: "34800 Yucaipa Blvd, Yucaipa, CA 92399 (Serving the Inland Empire)",
+  workingHours: "Mon - Sat: 8:00 AM - 6:00 PM",
   disclaimer:
-    "Final pricing may vary based on vehicle condition, size, selected materials, and physical inspection.",
+    "Custom estimates provided upon vehicle, home, or commercial glass inspection.",
 };
 
 export const aboutData = {
-  badge: "About Outumn Studio",
+  badge: "About $99 Tint Club",
   title: "CRAFTSMANSHIP MEETS",
   titleHighlight: "SURFACE SCIENCE",
   subtitle:
     "Founded with a singular pursuit: to provide supercars and luxury vehicles with authentic, uncompromising protection and finish clarity.",
   paragraphs: [
-    "Outumn Studio Detailing was built on the philosophy that modern high-performance vehicles demand a higher standard of care than conventional detail shops can deliver. Between complex composite panels, thin OEM clearcoats, and intricate aerodynamic elements, vehicle preservation is an exact science.",
+    "$99 Tint Club Detailing was built on the philosophy that modern high-performance vehicles demand a higher standard of care than conventional detail shops can deliver. Between complex composite panels, thin OEM clearcoats, and intricate aerodynamic elements, vehicle preservation is an exact science.",
     "Operating out of our climate-controlled, dust-filtered detailing suites, we combine optical-grade compounding, precision template-cut paint protection film, and molecular ceramic coatings. Every vehicle that enters our studio is treated to meticulous inspection, measured paint depth evaluation, and honest, transparent consultation.",
     "We do not believe in synthetic marketing claims or one-size-fits-all treatments. Whether you drive a track-focused GT car, a modern hypercar, or a timeless classic, our work is defined by lasting durability, optical depth, and seamless finish.",
   ],

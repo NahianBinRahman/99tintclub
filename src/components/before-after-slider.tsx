@@ -45,7 +45,7 @@ export const BeforeAfterSlider: React.FC = () => {
   };
 
   return (
-    <section id="paint-lab" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#07080c]">
+    <section id="paint-lab" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#1A1B1B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -93,9 +93,9 @@ export const BeforeAfterSlider: React.FC = () => {
                 className="w-full h-full object-cover"
               />
               {/* After Simple Label */}
-              <div className="absolute bottom-5 right-5 backdrop-blur-md bg-black/75 border border-emerald-500/30 px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-[11px] uppercase font-bold tracking-wider text-emerald-300 font-mono">
+              <div className="absolute bottom-5 right-5 backdrop-blur-md bg-black/80 border border-[#5EE07C]/40 px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5EE07C] shadow-[0_0_8px_rgba(94,224,124,0.8)]" />
+                <span className="text-[11px] uppercase font-bold tracking-wider text-[#5EE07C] font-mono">
                   AFTER
                 </span>
               </div>
@@ -117,9 +117,9 @@ export const BeforeAfterSlider: React.FC = () => {
               </div>
 
               {/* Before Simple Label */}
-              <div className="absolute bottom-5 left-5 backdrop-blur-md bg-black/75 border border-red-500/30 px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                <span className="text-[11px] uppercase font-bold tracking-wider text-red-400 font-mono">
+              <div className="absolute bottom-5 left-5 backdrop-blur-md bg-black/80 border border-white/20 px-3 py-1.5 rounded-lg shadow-xl flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                <span className="text-[11px] uppercase font-bold tracking-wider text-zinc-300 font-mono">
                   BEFORE
                 </span>
               </div>
@@ -127,37 +127,37 @@ export const BeforeAfterSlider: React.FC = () => {
 
             {/* Draggable Divider Line & Machined Handle */}
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-white/90 cursor-ew-resize z-20 pointer-events-none"
+              className="absolute top-0 bottom-0 w-[2px] bg-[#5EE07C] cursor-ew-resize z-20 pointer-events-none"
               style={{
                 left: `${sliderPos}%`,
-                boxShadow: "0 0 10px rgba(255,255,255,0.35)",
+                boxShadow: "0 0 12px rgba(94,224,124,0.6)",
               }}
             >
               <div
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0d1017] border border-white/80 flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.8)] transition-transform hover:scale-105 pointer-events-auto cursor-ew-resize"
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#252525] border border-[#5EE07C] flex items-center justify-center shadow-[0_0_18px_rgba(94,224,124,0.45)] transition-transform hover:scale-110 pointer-events-auto cursor-ew-resize"
               >
-                <Sliders className="w-3.5 h-3.5 text-white rotate-90" />
+                <Sliders className="w-3.5 h-3.5 text-[#5EE07C] rotate-90" />
               </div>
             </div>
           </div>
 
           {/* Quick Technical Summary Bar Under Slider */}
-          <div className="bg-[#0a0c13] px-6 py-4 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="bg-[#252525] px-6 py-4 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div>
               <div className="text-[11px] uppercase font-mono text-zinc-400">Defect Reduction</div>
               <div className="text-xs sm:text-sm font-bold text-white font-mono mt-0.5">Multi-Stage Polish</div>
             </div>
             <div>
               <div className="text-[11px] uppercase font-mono text-zinc-400">Paint Integrity</div>
-              <div className="text-xs sm:text-sm font-bold text-amber-400 font-mono mt-0.5">Ultrasonic Gauged</div>
+              <div className="text-xs sm:text-sm font-bold text-[#5EE07C] font-mono mt-0.5">Ultrasonic Gauged</div>
             </div>
             <div>
               <div className="text-[11px] uppercase font-mono text-zinc-400">Surface Finish</div>
-              <div className="text-xs sm:text-sm font-bold text-cyan-400 font-mono mt-0.5">High Specular Gloss</div>
+              <div className="text-xs sm:text-sm font-bold text-white font-mono mt-0.5">High Specular Gloss</div>
             </div>
             <div>
               <div className="text-[11px] uppercase font-mono text-zinc-400">Surface Shield</div>
-              <div className="text-xs sm:text-sm font-bold text-emerald-400 font-mono mt-0.5">Multi-Year Durability</div>
+              <div className="text-xs sm:text-sm font-bold text-[#5EE07C] font-mono mt-0.5">Multi-Year Durability</div>
             </div>
           </div>
         </div>

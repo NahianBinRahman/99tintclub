@@ -10,9 +10,9 @@ export interface ServiceItem {
   id: string;
   title: string;
   subtitle: string;
-  category: 'Ceramic Coating' | 'PPF Wraps' | 'PPF Protection Film' | 'Paint Correction' | 'Interior Spa' | 'Interior Detailing' | 'Window Tint' | 'Full Package' | 'Full Concierge Package';
-  price: string;
-  duration: string;
+  category: string;
+  price?: string;
+  duration?: string;
   description: string;
   features: string[];
   popular?: boolean;

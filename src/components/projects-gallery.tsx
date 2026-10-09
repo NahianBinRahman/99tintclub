@@ -20,7 +20,7 @@ export const ProjectsGallery: React.FC = () => {
         );
 
   return (
-    <section id="projects" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06]">
+    <section id="projects" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.06] bg-[#1A1B1B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -48,8 +48,8 @@ export const ProjectsGallery: React.FC = () => {
               onClick={() => setActiveFilter(brand)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 border ${
                 activeFilter === brand
-                  ? "bg-white text-black border-white shadow-[0_2px_10px_rgba(255,255,255,0.25)] font-bold"
-                  : "bg-white/[0.03] text-zinc-300 border-white/[0.08] hover:border-white/20 hover:text-white"
+                  ? "bg-[#5EE07C] text-black border-[#5EE07C] shadow-[0_2px_12px_rgba(94,224,124,0.35)] font-bold"
+                  : "bg-[#252525] text-zinc-300 border-white/[0.08] hover:border-white/20 hover:text-white"
               }`}
             >
               {brand}
@@ -80,7 +80,7 @@ export const ProjectsGallery: React.FC = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090b12] via-transparent to-transparent opacity-85" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#252525] via-transparent to-transparent opacity-85" />
 
                 {/* Gloss Rating Badge with GU explanation */}
                 <div
@@ -159,7 +159,7 @@ export const ProjectsGallery: React.FC = () => {
                 alt={selectedProject.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0e111a] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#252525] via-transparent to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
@@ -183,7 +183,7 @@ export const ProjectsGallery: React.FC = () => {
             </div>
 
             {/* Modal Specs */}
-            <div className="p-6 sm:p-8 bg-[#0e111a]">
+            <div className="p-6 sm:p-8 bg-[#252525]">
               <div className="text-xs uppercase font-extrabold tracking-wider text-zinc-300 mb-2">
                 Applied Bespoke Treatments
               </div>
@@ -198,7 +198,7 @@ export const ProjectsGallery: React.FC = () => {
                 </div>
                 <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                   <span className="text-[10px] font-mono uppercase text-zinc-400 block">Installation Bay</span>
-                  <span className="text-xs font-bold text-emerald-400">Climate-Controlled</span>
+                  <span className="text-xs font-bold text-[#5EE07C]">Climate-Controlled</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] col-span-2 sm:col-span-1">
                   <span className="text-[10px] font-mono uppercase text-zinc-400 block">Applied Finish</span>

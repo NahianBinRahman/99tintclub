@@ -44,14 +44,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`group flex items-center gap-2.5 select-none ${className}`}>
       {/* Bespoke Ceramic Tint Shield Crest */}
       <div
-        className={`relative ${iconSizeClasses} rounded-xl bg-gradient-to-b from-zinc-800/95 via-[#0e1017] to-black border border-white/20 flex items-center justify-center overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.7)] group-hover:border-amber-400/60 group-hover:shadow-[0_0_22px_rgba(245,158,11,0.35)] transition-all duration-300 flex-shrink-0`}
+        className={`relative ${iconSizeClasses} rounded-xl bg-gradient-to-b from-[#252525] via-[#1A1B1B] to-black border border-white/20 flex items-center justify-center overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.7)] group-hover:border-[#5EE07C]/70 group-hover:shadow-[0_0_22px_rgba(94,224,124,0.35)] transition-all duration-300 flex-shrink-0`}
       >
-        {/* Ambient Warm Gradient Sheen */}
+        {/* Ambient Emerald Gradient Sheen */}
         <div
           className="absolute inset-0 opacity-25 group-hover:opacity-45 transition-opacity duration-300"
           style={{
             background:
-              "radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.4) 0%, rgba(239, 68, 68, 0.2) 60%, transparent 100%)",
+              "radial-gradient(circle at 30% 20%, rgba(94, 224, 124, 0.4) 0%, rgba(52, 211, 153, 0.2) 60%, transparent 100%)",
           }}
         />
 
@@ -70,23 +70,23 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           <defs>
             {/* Dark Nano-Ceramic Tint Glass Gradient */}
             <linearGradient id="tintGlass" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#1e2430" stopOpacity="0.9" />
-              <stop offset="0.5" stopColor="#0a0d14" stopOpacity="0.95" />
-              <stop offset="1" stopColor="#040608" stopOpacity="1" />
+              <stop stopColor="#252525" stopOpacity="0.9" />
+              <stop offset="0.5" stopColor="#1A1B1B" stopOpacity="0.95" />
+              <stop offset="1" stopColor="#0a0a0a" stopOpacity="1" />
             </linearGradient>
 
-            {/* Specular Titanium & Gold Edge Contour */}
-            <linearGradient id="goldEdge" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffffff" stopOpacity="0.9" />
-              <stop offset="0.3" stopColor="#f59e0b" stopOpacity="0.9" />
-              <stop offset="0.7" stopColor="#ef4444" stopOpacity="0.8" />
-              <stop offset="1" stopColor="#d97706" stopOpacity="0.9" />
+            {/* Specular Titanium & Emerald Edge Contour */}
+            <linearGradient id="mintEdge" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#ffffff" stopOpacity="0.95" />
+              <stop offset="0.3" stopColor="#5EE07C" stopOpacity="0.95" />
+              <stop offset="0.7" stopColor="#34d399" stopOpacity="0.85" />
+              <stop offset="1" stopColor="#10b981" stopOpacity="0.95" />
             </linearGradient>
 
             {/* Internal Refraction Glow */}
             <radialGradient id="apexGlow" cx="16" cy="14" r="8" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#f59e0b" stopOpacity="0.6" />
-              <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
+              <stop stopColor="#5EE07C" stopOpacity="0.6" />
+              <stop offset="1" stopColor="#10b981" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -94,7 +94,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           <path
             d="M 16 3 L 26 7 C 26 18 16 27.5 16 28 C 16 27.5 6 18 6 7 L 16 3 Z"
             fill="url(#tintGlass)"
-            stroke="url(#goldEdge)"
+            stroke="url(#mintEdge)"
             strokeWidth="1.2"
             strokeLinejoin="round"
           />
@@ -119,14 +119,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           />
           <path
             d="M 16 17 L 16 21"
-            stroke="#f59e0b"
+            stroke="#5EE07C"
             strokeWidth="1.2"
             strokeLinecap="round"
           />
         </svg>
 
         {/* Subtle Base Rim Highlight */}
-        <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#5EE07C]/50 to-transparent" />
       </div>
 
       {/* Typography: $99 TINT CLUB */}
@@ -135,19 +135,19 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           {/* $99 Metallic Badge Element */}
           <span className="inline-flex items-baseline tracking-tight">
             <span
-              className={`${dollarSizeClasses} font-black text-amber-400 font-mono tracking-tighter mr-0.5 select-none`}
+              className={`${dollarSizeClasses} font-black text-[#5EE07C] font-mono tracking-tighter mr-0.5 select-none drop-shadow-[0_0_8px_rgba(94,224,124,0.4)]`}
             >
               $
             </span>
             <span
-              className={`${numberSizeClasses} font-black tracking-tight text-white font-mono drop-shadow-[0_2px_10px_rgba(255,255,255,0.25)]`}
+              className={`${numberSizeClasses} font-black tracking-tight text-white font-mono drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)]`}
             >
               99
             </span>
           </span>
 
           {/* Precision Hairline Divider */}
-          <span className="w-[1px] h-3.5 sm:h-4 bg-gradient-to-b from-transparent via-amber-400/60 to-transparent mx-0.5" />
+          <span className="w-[1px] h-3.5 sm:h-4 bg-gradient-to-b from-transparent via-[#5EE07C]/60 to-transparent mx-0.5" />
 
           {/* TINT */}
           <span
@@ -156,17 +156,17 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             TINT
           </span>
 
-          {/* CLUB with Luxury Thermal-Gold Gradient */}
+          {/* CLUB with Luxury Mint Gradient */}
           <span
-            className={`${textSizeClasses} font-black tracking-[0.18em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-amber-200 drop-shadow-[0_2px_8px_rgba(245,158,11,0.2)]`}
+            className={`${textSizeClasses} font-black tracking-[0.18em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#5EE07C] via-emerald-300 to-white drop-shadow-[0_2px_8px_rgba(94,224,124,0.3)]`}
           >
             CLUB
           </span>
 
           {/* Live Studio Status Dot */}
           <span className="relative flex h-1.5 w-1.5 ml-0.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-gradient-to-r from-amber-400 to-rose-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#5EE07C] opacity-75" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#5EE07C] shadow-[0_0_8px_rgba(94,224,124,0.85)]" />
           </span>
         </div>
 
@@ -184,7 +184,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <Link
         href="/"
-        className="inline-flex items-center transition-transform duration-200 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-lg"
+        className="inline-flex items-center transition-transform duration-200 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5EE07C] rounded-lg"
         aria-label="$99 Tint Club Home"
       >
         {content}

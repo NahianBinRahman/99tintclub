@@ -83,8 +83,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "py-2 bg-[#07080c]/92 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_6px_24px_rgba(0,0,0,0.7)]"
-            : "py-2.5 sm:py-3 bg-gradient-to-b from-[#07080c]/95 via-[#07080c]/80 to-transparent"
+            ? "py-2 bg-[#1A1B1B]/95 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_6px_24px_rgba(0,0,0,0.7)]"
+            : "py-2.5 sm:py-3 bg-gradient-to-b from-[#1A1B1B]/95 via-[#1A1B1B]/80 to-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
                       {/* Dropdown Menu */}
                       {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-1.5 w-64 rounded-2xl bg-[#0c0e16]/95 backdrop-blur-xl border border-white/10 p-2 shadow-2xl z-50 flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-150">
+                        <div className="absolute top-full left-0 mt-1.5 w-64 rounded-2xl bg-[#252525]/98 backdrop-blur-xl border border-white/10 p-2 shadow-2xl z-50 flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-150">
                           <a
                             href={getHref("#services")}
                             onClick={() => setServicesDropdownOpen(false)}
@@ -146,9 +146,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                             onClick={() => setServicesDropdownOpen(false)}
                             className="p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group flex items-start gap-2.5 text-left"
                           >
-                            <Layers className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                            <Layers className="w-4 h-4 text-[var(--accent-primary)] mt-0.5 flex-shrink-0" />
                             <div>
-                              <div className="text-xs font-bold text-white uppercase tracking-wider group-hover:text-amber-400 transition-colors">
+                              <div className="text-xs font-bold text-white uppercase tracking-wider group-hover:text-[var(--accent-primary)] transition-colors">
                                 Paint Lab & Restoration
                               </div>
                               <div className="text-[11px] text-zinc-400 font-normal">
@@ -162,9 +162,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                             onClick={() => setServicesDropdownOpen(false)}
                             className="p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group flex items-start gap-2.5 text-left"
                           >
-                            <Glasses className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                            <Glasses className="w-4 h-4 text-[var(--accent-primary)] mt-0.5 flex-shrink-0" />
                             <div>
-                              <div className="text-xs font-bold text-white uppercase tracking-wider group-hover:text-cyan-400 transition-colors">
+                              <div className="text-xs font-bold text-white uppercase tracking-wider group-hover:text-[var(--accent-primary)] transition-colors">
                                 AR / VR Experience
                               </div>
                               <div className="text-[11px] text-zinc-400 font-normal">
@@ -258,7 +258,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation drawer"
-          className="fixed inset-0 z-40 bg-[#07080c]/98 backdrop-blur-2xl sm:hidden pt-20 px-6 pb-8 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200"
+          className="fixed inset-0 z-40 bg-[#1A1B1B]/98 backdrop-blur-2xl sm:hidden pt-20 px-6 pb-8 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200"
         >
           <div className="flex flex-col gap-1">
             <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 mb-2">
@@ -289,7 +289,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] flex flex-col gap-1 text-xs font-semibold text-zinc-300 hover:text-white transition-colors"
                 >
-                  <Layers className="w-4 h-4 text-amber-400" />
+                  <Layers className="w-4 h-4 text-[var(--accent-primary)]" />
                   <span>Paint Lab</span>
                 </a>
 
@@ -298,7 +298,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] flex flex-col gap-1 text-xs font-semibold text-zinc-300 hover:text-white transition-colors"
                 >
-                  <Glasses className="w-4 h-4 text-cyan-400" />
+                  <Glasses className="w-4 h-4 text-[var(--accent-primary)]" />
                   <span>AR/VR Studio</span>
                 </a>
               </div>

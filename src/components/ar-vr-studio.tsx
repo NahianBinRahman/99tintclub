@@ -97,7 +97,7 @@ export const ArVrStudio: React.FC = () => {
     let height = (canvas.height = canvas.offsetHeight);
 
     const particles: { x: number; y: number; vx: number; vy: number; radius: number; color: string }[] = [];
-    const colors = ["rgba(239, 68, 68, 0.6)", "rgba(245, 158, 11, 0.6)", "rgba(6, 182, 212, 0.6)"];
+    const colors = ["rgba(94, 224, 124, 0.7)", "rgba(52, 211, 153, 0.5)", "rgba(255, 255, 255, 0.6)"];
 
     for (let i = 0; i < 45; i++) {
       particles.push({
@@ -168,7 +168,7 @@ export const ArVrStudio: React.FC = () => {
   const currentAngle = VEHICLE_ANGLES[currentAngleIndex];
 
   return (
-    <section id="ar-studio" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.08] bg-[#06070a]">
+    <section id="ar-studio" className="py-20 sm:py-24 relative overflow-hidden border-b border-white/[0.08] bg-[#1A1B1B]">
       {/* Background Particle Motion Canvas */}
       <canvas
         ref={canvasRef}
@@ -183,9 +183,9 @@ export const ArVrStudio: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-mono uppercase tracking-widest text-[var(--accent-primary)] mb-3">
-              <Glasses className="w-3.5 h-3.5 text-cyan-400" />
+              <Glasses className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
               <span>360° VEHICLE VISUALIZER</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5EE07C] animate-ping" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white">
@@ -243,7 +243,7 @@ export const ArVrStudio: React.FC = () => {
                 onClick={() => setIsAutoOrbit(!isAutoOrbit)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-mono uppercase transition-colors ${
                   isAutoOrbit
-                    ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-400"
+                    ? "bg-[#5EE07C]/15 border-[#5EE07C]/40 text-[#5EE07C]"
                     : "bg-white/5 border-white/10 text-zinc-300"
                 }`}
               >
@@ -300,7 +300,7 @@ export const ArVrStudio: React.FC = () => {
             {/* Top HUD Status Badges */}
             <div className="absolute top-4 left-4 z-30 flex flex-wrap items-center gap-2 pointer-events-none">
               <div className="backdrop-blur-md bg-black/75 border border-white/10 px-3 py-1 rounded-lg flex items-center gap-2 shadow-lg">
-                <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                <Activity className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
                 <span className="text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
                   BAY: CLIMATE-CONTROLLED
                 </span>
@@ -314,7 +314,7 @@ export const ArVrStudio: React.FC = () => {
               </div>
 
               <div className="backdrop-blur-md bg-black/75 border border-white/10 px-3 py-1 rounded-lg flex items-center gap-2 shadow-lg">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span className="text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
                   FINISH: CONCOURS GLOSS
                 </span>
@@ -357,7 +357,7 @@ export const ArVrStudio: React.FC = () => {
               <div className="absolute bottom-5 left-5 right-5 sm:left-auto sm:right-5 sm:w-80 z-40 backdrop-blur-xl bg-black/90 border border-white/15 p-4.5 rounded-xl shadow-2xl animate-in slide-in-from-bottom-3 duration-200">
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <Shield className="w-3.5 h-3.5 text-cyan-400" />
+                    <Shield className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
                     <span className="text-xs font-bold uppercase text-white">
                       {selectedHotspot.title}
                     </span>
@@ -419,7 +419,7 @@ export const ArVrStudio: React.FC = () => {
               <QrCode className="w-6 h-6" />
             </div>
 
-            <span className="text-[10px] font-mono uppercase text-cyan-400 font-bold tracking-widest block mb-1">
+            <span className="text-[10px] font-mono uppercase text-[var(--accent-primary)] font-bold tracking-widest block mb-1">
               MOBILE 3D & AR PREVIEW
             </span>
             <h3 className="text-xl font-black uppercase text-white mb-2">
@@ -433,9 +433,9 @@ export const ArVrStudio: React.FC = () => {
             <div className="p-3.5 rounded-xl bg-white inline-block shadow-2xl mb-5">
               <div className="w-44 h-44 bg-zinc-950 rounded-lg p-2 flex flex-col items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 cyber-grid opacity-20" />
-                <div className="w-32 h-32 border-2 border-dashed border-cyan-400/80 rounded-lg flex flex-col items-center justify-center text-center p-2 relative z-10 animate-pulse">
+                <div className="w-32 h-32 border-2 border-dashed border-[var(--accent-primary)]/80 rounded-lg flex flex-col items-center justify-center text-center p-2 relative z-10 animate-pulse">
                   <Smartphone className="w-7 h-7 text-white mb-1" />
-                  <span className="text-[10px] font-mono text-cyan-300 font-bold uppercase">
+                  <span className="text-[10px] font-mono text-[var(--accent-primary)] font-bold uppercase">
                     Ready for 3D Preview
                   </span>
                   <span className="text-[9px] text-zinc-400 font-mono">Scan Camera</span>
@@ -444,7 +444,7 @@ export const ArVrStudio: React.FC = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-center gap-2 text-[11px] text-emerald-400 font-medium">
+              <div className="flex items-center justify-center gap-2 text-[11px] text-[#5EE07C] font-medium">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>iOS QuickLook & Android AR Ready</span>
               </div>
