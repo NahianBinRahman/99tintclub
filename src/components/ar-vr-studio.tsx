@@ -36,8 +36,8 @@ interface SupercarAngle {
 
 const VEHICLE_ANGLES: SupercarAngle[] = [
   {
-    label: "Front 3/4 Studio",
-    image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
+    label: "California Porsche 911 (Front 3/4)",
+    image: "/images/california-porsche.jpg",
     hotspots: [
       { x: 38, y: 55, title: "Self-Healing Front PPF", detail: "Computer-cut thermoplastic polyurethane film shielding bumper, hood, and mirrors.", spec: "Self-Healing TPU" },
       { x: 72, y: 62, title: "Forged Wheel Ceramic", detail: "High-temperature ceramic barrier applied to wheel faces, barrels, and brake calipers.", spec: "Thermal Ceramic" },
@@ -45,20 +45,20 @@ const VEHICLE_ANGLES: SupercarAngle[] = [
     ],
   },
   {
-    label: "Aero Profile View",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop",
+    label: "Tesla Model S Plaid (Glass Roof & Tint)",
+    image: "/images/california-tesla.jpg",
     hotspots: [
       { x: 28, y: 50, title: "Fender Protection Film", detail: "High-impact protection film with computer-cut wrapped edges along body lines.", spec: "Wrapped Edges" },
       { x: 58, y: 58, title: "Stage 2 Paint Correction", detail: "Multi-stage jeweled compounding achieving swirl-free optical depth.", spec: "High Gloss Finish" },
-      { x: 78, y: 48, title: "Rear Arch Stone Guard", detail: "Protective film behind drive wheels defending against thrown road debris.", spec: "Impact Shield" },
+      { x: 78, y: 48, title: "Panoramic Roof Ceramic Tint", detail: "Superior infrared solar heat rejection defending California EV cabin.", spec: "IR Heat Shield" },
     ],
   },
   {
-    label: "Rear Diffuser & Track Wing",
-    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1600&auto=format&fit=crop",
+    label: "Range Rover Sport (California Estate)",
+    image: "/images/california-range-rover.jpg",
     hotspots: [
-      { x: 50, y: 30, title: "Carbon Fiber Ceramic", detail: "UV-inhibiting ceramic protective topcoat preserving exposed carbon weave.", spec: "UV Protection" },
-      { x: 50, y: 70, title: "Exhaust Surround Protection", detail: "High-temperature barrier protecting bumper surfaces from exhaust heat.", spec: "Thermal Defense" },
+      { x: 50, y: 30, title: "Full Privacy Window Tint", detail: "Dark ceramic privacy tint shielding passenger compartment and interior leather.", spec: "99% UV Block" },
+      { x: 50, y: 70, title: "10H Ceramic Surface Shield", detail: "Covalent quartz layer guarding against desert dust, UV fading, and road debris.", spec: "10H Hardness" },
     ],
   },
 ];

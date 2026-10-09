@@ -118,10 +118,10 @@ export interface AddonOption {
  * Estimator Configuration (Pending client verification of pricing & turnaround)
  */
 export const defaultVehicleClasses: VehicleClass[] = [
-  { id: "supercar", name: "Exotic & Supercar", multiplier: 1.15, iconText: "GT3 / F8", example: "Porsche 911, Ferrari, McLaren" },
-  { id: "coupe", name: "Sports Coupe / Sedan", multiplier: 1.0, iconText: "M4 / AMG", example: "BMW M3/M4, AMG C63, Audi RS" },
-  { id: "suv", name: "Performance SUV", multiplier: 1.25, iconText: "G63 / Urus", example: "AMG G63, Urus, Cayenne Turbo" },
-  { id: "grand", name: "Luxury Flagship / Truck", multiplier: 1.4, iconText: "Cullinan / TRX", example: "Rolls-Royce, Escalade, TRX" },
+  { id: "supercar", name: "California Exotic & Sports", multiplier: 1.15, iconText: "911 / Taycan", example: "Porsche 911, Taycan, Corvette Z06" },
+  { id: "coupe", name: "Performance Sedan & EV", multiplier: 1.0, iconText: "Model S / M4", example: "Tesla Model S / 3, BMW M3/M4, Audi RS" },
+  { id: "suv", name: "Luxury SUV & Crossover", multiplier: 1.25, iconText: "Range / G63", example: "Range Rover Sport, AMG G63, Tesla Model Y" },
+  { id: "grand", name: "California Flagship & Truck", multiplier: 1.4, iconText: "Cyber / Escalade", example: "Tesla Cybertruck, Cadillac Escalade, Rivian R1T" },
 ];
 
 export const defaultAddonOptions: AddonOption[] = [

@@ -88,7 +88,7 @@ export const BeforeAfterSlider: React.FC = () => {
             {/* "AFTER" Image (Right Layer / Full Background) */}
             <div className="absolute inset-0 w-full h-full">
               <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
+                src="/images/california-porsche.jpg"
                 alt="After paint correction and protective ceramic finish"
                 className="w-full h-full object-cover"
               />
@@ -109,7 +109,7 @@ export const BeforeAfterSlider: React.FC = () => {
               <div className="relative w-full h-full" style={{ width: "100%", minWidth: "100%" }}>
                 {/* Visual filter simulating swirls and hazing */}
                 <img
-                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
+                  src="/images/california-porsche.jpg"
                   alt="Before paint correction with wash swirls and hazing"
                   className="w-full h-full object-cover filter contrast-75 brightness-90 saturate-50 blur-[0.6px]"
                 />
