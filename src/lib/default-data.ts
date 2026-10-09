@@ -25,10 +25,24 @@ export const initialSiteConfig: SiteConfig = {
   heroSupercarImage: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
   theme: {
     accent: "apex-combo",
+    customAccentColor: "#5EE07C",
+    customBackgroundColor: "#1A1B1B",
+    customCardColor: "#252525",
     fontSize: "normal",
+    fontFamily: "system",
     enableGridBackground: true,
     enableAmbientGlow: true,
     cardGlassOpacity: 65,
+    sections: {
+      hero: true,
+      services: true,
+      slider: true,
+      calculator: true,
+      projects: true,
+      about: true,
+      testimonials: true,
+      arStudio: true,
+    },
   },
   // Simplified primary navigation per requirements
   navItems: [

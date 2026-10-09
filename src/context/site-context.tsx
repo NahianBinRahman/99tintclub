@@ -87,7 +87,27 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        setConfig(parsed);
+        setConfig({
+          ...initialSiteConfig,
+          ...parsed,
+          theme: {
+            ...initialSiteConfig.theme,
+            ...(parsed.theme || {}),
+            sections: {
+              ...(initialSiteConfig.theme.sections || {
+                hero: true,
+                services: true,
+                slider: true,
+                calculator: true,
+                projects: true,
+                about: true,
+                testimonials: true,
+                arStudio: true,
+              }),
+              ...((parsed.theme && parsed.theme.sections) || {}),
+            },
+          },
+        });
       }
     } catch (e) {
       console.error("Failed to load site config from storage", e);
@@ -105,9 +125,20 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Update dynamic CSS variables on document root
       const root = document.documentElement;
       const themeData = ACCENT_COLOR_MAP[config.theme.accent] || ACCENT_COLOR_MAP["apex-combo"];
-      root.style.setProperty("--accent-primary", themeData.primary);
-      root.style.setProperty("--accent-glow", themeData.glow);
-      root.style.setProperty("--accent-gradient", themeData.gradient);
+      const primaryColor = config.theme.customAccentColor || themeData.primary;
+      
+      root.style.setProperty("--accent-primary", primaryColor);
+      root.style.setProperty("--accent-glow", config.theme.customAccentColor ? `${primaryColor}66` : themeData.glow);
+      root.style.setProperty("--accent-gradient", config.theme.customAccentColor 
+        ? `linear-gradient(135deg, ${primaryColor} 0%, #34d399 50%, #10b981 100%)`
+        : themeData.gradient);
+
+      if (config.theme.customBackgroundColor) {
+        root.style.setProperty("--site-bg", config.theme.customBackgroundColor);
+      }
+      if (config.theme.customCardColor) {
+        root.style.setProperty("--card-bg", config.theme.customCardColor);
+      }
 
       // Font Scale
       if (config.theme.fontSize === "compact") {
@@ -116,6 +147,19 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({ children
         root.style.setProperty("--font-scale", "1.075rem");
       } else {
         root.style.setProperty("--font-scale", "1rem");
+      }
+
+      // Font Family
+      if (config.theme.fontFamily === "outfit") {
+        root.style.setProperty("--font-family-body", "'Outfit', sans-serif");
+      } else if (config.theme.fontFamily === "syne") {
+        root.style.setProperty("--font-family-body", "'Syne', sans-serif");
+      } else if (config.theme.fontFamily === "space-grotesk") {
+        root.style.setProperty("--font-family-body", "'Space Grotesk', sans-serif");
+      } else if (config.theme.fontFamily === "mono") {
+        root.style.setProperty("--font-family-body", "monospace");
+      } else {
+        root.style.setProperty("--font-family-body", "inherit");
       }
     } catch (e) {
       console.error("Failed to persist site config", e);

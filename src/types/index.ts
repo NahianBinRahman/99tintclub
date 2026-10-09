@@ -70,13 +70,30 @@ export interface StatItem {
 
 export type AccentColorTheme = 'apex-combo' | 'amber' | 'cyan' | 'red' | 'violet' | 'emerald';
 export type FontSizeScale = 'compact' | 'normal' | 'spacious';
+export type FontFamilyChoice = 'system' | 'inter' | 'outfit' | 'syne' | 'space-grotesk' | 'mono';
+
+export interface SectionVisibilityConfig {
+  hero: boolean;
+  services: boolean;
+  slider: boolean;
+  calculator: boolean;
+  projects: boolean;
+  about: boolean;
+  testimonials: boolean;
+  arStudio: boolean;
+}
 
 export interface ThemeConfig {
   accent: AccentColorTheme;
+  customAccentColor?: string;
+  customBackgroundColor?: string;
+  customCardColor?: string;
   fontSize: FontSizeScale;
+  fontFamily?: FontFamilyChoice;
   enableGridBackground: boolean;
   enableAmbientGlow: boolean;
   cardGlassOpacity: number;
+  sections?: SectionVisibilityConfig;
 }
 
 export interface SiteConfig {

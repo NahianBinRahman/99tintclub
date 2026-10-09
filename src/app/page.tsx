@@ -15,6 +15,7 @@ import { BookingModal } from "@/components/booking-modal";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { MobileDock } from "@/components/mobile-dock";
 import { ServiceItem } from "@/types";
+import { useSiteConfig } from "@/context/site-context";
 
 export default function HomePage() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -47,20 +48,34 @@ export default function HomePage() {
     setBookingOpen(true);
   };
 
+  const { config } = useSiteConfig();
+  const sections = config.theme?.sections || {
+    hero: true,
+    services: true,
+    slider: true,
+    calculator: true,
+    projects: true,
+    about: true,
+    testimonials: true,
+    arStudio: true,
+  };
+
   return (
     <div className="min-h-screen bg-[#1A1B1B] text-slate-100 flex flex-col selection:bg-[var(--accent-primary)] selection:text-black">
       <ScrollProgress />
       <Navbar onOpenBooking={handleOpenGeneralBooking} />
 
       <main className="flex-1">
-        <HeroSection onOpenBooking={handleOpenGeneralBooking} />
-        <ServicesSection onSelectService={handleSelectService} />
-        <BeforeAfterSlider />
-        <CalculatorSection onProceedWithEstimate={handleProceedWithEstimate} />
-        <ProjectsGallery />
-        <AboutSection onOpenBooking={handleOpenGeneralBooking} />
-        <TestimonialsSection />
-        <ArVrStudio />
+        {sections.hero !== false && <HeroSection onOpenBooking={handleOpenGeneralBooking} />}
+        {sections.services !== false && <ServicesSection onSelectService={handleSelectService} />}
+        {sections.slider !== false && <BeforeAfterSlider />}
+        {sections.calculator !== false && (
+          <CalculatorSection onProceedWithEstimate={handleProceedWithEstimate} />
+        )}
+        {sections.projects !== false && <ProjectsGallery />}
+        {sections.about !== false && <AboutSection onOpenBooking={handleOpenGeneralBooking} />}
+        {sections.testimonials !== false && <TestimonialsSection />}
+        {sections.arStudio !== false && <ArVrStudio />}
       </main>
 
       <Footer />

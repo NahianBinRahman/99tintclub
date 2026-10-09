@@ -224,13 +224,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 href="#services"
                 className="text-xs sm:text-sm font-medium text-zinc-300 hover:text-white transition-colors flex items-center gap-1.5 group py-1.5"
               >
-                <span>Explore Services & Pricing</span>
+                <span>Explore Services & Specialties</span>
                 <span className="text-[#5EE07C] transition-transform duration-200 group-hover:translate-x-1">→</span>
               </a>
             </div>
 
             {/* 2x2 Grid of Feature Chips (Flexible padding & hover effects) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 w-full max-w-lg">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3 w-full max-w-lg">
               {/* 1. Professional Grade Products */}
               <div className="flex items-center gap-3 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#16181b]/95 border border-white/[0.07] backdrop-blur-md hover:border-[#5EE07C]/40 transition-colors">
                 <div className="w-5 h-5 rounded-lg bg-black/40 border border-white/10 flex items-center justify-center text-[#5EE07C] flex-shrink-0">

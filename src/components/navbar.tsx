@@ -329,12 +329,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </a>
 
             <a
-              href={`tel:${config.phone}`}
-              className="flex items-center justify-center gap-2 text-xs font-medium text-zinc-400 hover:text-zinc-200 py-2"
+              href={`tel:${config.phone.replace(/[^0-9+]/g, "")}`}
+              className="flex items-center justify-center gap-2 text-xs font-medium text-zinc-400 hover:text-zinc-200 py-1"
             >
-              <Phone className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
+              <Phone className="w-3.5 h-3.5 text-[#5EE07C]" />
               <span>{config.phone}</span>
             </a>
+
+            <Link
+              href="/admin"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-1.5 text-[11px] font-mono uppercase text-zinc-500 hover:text-[#5EE07C] pt-2 border-t border-white/[0.06]"
+            >
+              <Shield className="w-3.5 h-3.5" />
+              <span>Admin Console</span>
+            </Link>
           </div>
         </div>
       )}
