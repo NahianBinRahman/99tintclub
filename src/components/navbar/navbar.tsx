@@ -52,6 +52,30 @@ export function Navbar() {
   const { brand, menuItems, ctaButton } = navigationData;
   const servicesItem = menuItems.find((item) => item.children);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    closeMobile = false
+  ) => {
+    if (closeMobile) {
+      setMobileOpen(false);
+    }
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (targetId === "hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Update URL hash without breaking back button or failing on same hash
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -104,6 +128,7 @@ export function Navbar() {
                 <Link
                   key={item.id}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`transition-colors cursor-pointer bg-transparent ${
                     isInDarkSection
                       ? "text-white/85 hover:text-[#FF1A1A]"
@@ -126,6 +151,7 @@ export function Navbar() {
             {ctaButton && (
               <Link
                 href={ctaButton.href}
+                onClick={(e) => handleNavClick(e, ctaButton.href)}
                 className="text-[#FF1A1A] hover:text-white transition-colors cursor-pointer font-bold tracking-wider"
               >
                 {ctaButton.label}
@@ -199,7 +225,9 @@ export function Navbar() {
                                   <Link
                                     key={child.id}
                                     href={child.href}
-                                    onClick={() => setMobileOpen(false)}
+                                    onClick={(e) =>
+                                      handleNavClick(e, child.href, true)
+                                    }
                                     className="flex items-center gap-2.5 py-1.5 text-xs text-zinc-300 hover:text-[#FF1A1A] transition-colors"
                                   >
                                     <span className="font-semibold uppercase tracking-wide">
@@ -218,7 +246,7 @@ export function Navbar() {
                       <Link
                         key={item.id}
                         href={item.href}
-                        onClick={() => setMobileOpen(false)}
+                        onClick={(e) => handleNavClick(e, item.href, true)}
                         className="block py-2 text-base font-anton uppercase tracking-wider text-white hover:text-[#FF1A1A] transition-colors"
                       >
                         {item.label}
@@ -231,7 +259,7 @@ export function Navbar() {
                 <div className="pt-4 border-t border-white/10 space-y-3">
                   <Link
                     href={ctaButton.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, ctaButton.href, true)}
                     className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#FF1A1A] text-white font-anton text-base uppercase tracking-wider shadow-md cursor-pointer"
                   >
                     <span>{ctaButton.label}</span>
@@ -266,7 +294,10 @@ export function Navbar() {
                   <Link
                     key={child.id}
                     href={child.href}
-                    onClick={() => setServicesDropdownOpen(false)}
+                    onClick={(e) => {
+                      setServicesDropdownOpen(false);
+                      handleNavClick(e, child.href);
+                    }}
                     className={`flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider transition-colors group cursor-pointer ${
                       isInDarkSection
                         ? "text-zinc-300 hover:text-white"
