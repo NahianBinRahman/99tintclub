@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { contactData } from "@/data/contact";
+import { useSiteConfig } from "@/context/site-context";
 import {
   MapPin,
   Phone,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 export function ContactSection() {
+  const { addBooking, config } = useSiteConfig();
   const [selectedService, setSelectedService] = useState(
     contactData.servicesAvailable[0]
   );
@@ -25,6 +27,15 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
+
+    // Register booking directly into Admin pipeline
+    addBooking({
+      name: name.trim(),
+      phone: phone.trim(),
+      vehicle: vehicle.trim() || "Automotive Inquiry",
+      service: selectedService,
+    });
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -47,7 +58,7 @@ export function ContactSection() {
     <article
       id="contact"
       data-snap-section="true"
-      className="relative w-full h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none"
+      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none py-14 md:py-0"
     >
       {/* Background Red Studio Radial Aura */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[360px] bg-[#FF1A1A]/10 rounded-full blur-[150px] pointer-events-none -z-10" />
@@ -69,7 +80,7 @@ export function ContactSection() {
       {/* =========================================================================
           Center Stage: Luxury Frosted Glass Contact & Booking Studio Matrix
           ========================================================================= */}
-      <div className="relative w-full max-w-[1300px] mx-auto px-4 sm:px-8 lg:px-10 flex-1 flex flex-col justify-center z-10 my-auto">
+      <div className="relative w-full max-w-[1300px] mx-auto px-4 sm:px-8 lg:px-10 flex-1 flex flex-col justify-center z-10 my-auto py-6 md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center">
           {/* Left Column (5 Cols): Studio Details & Direct Concierge */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-3">

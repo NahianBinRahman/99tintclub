@@ -44,7 +44,7 @@ export function Hero({ customData }: HeroProps) {
       </div>
 
       {/* Bottom Center: Supporting Text + Red BOOK NOW Pill Button */}
-      <div className="absolute bottom-1 sm:bottom-2 lg:bottom-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex flex-col items-center text-center space-y-1.5 max-w-[190px]">
+      <div className="absolute bottom-14 sm:bottom-2 lg:bottom-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex flex-col items-center text-center space-y-1.5 max-w-[190px]">
         <p className="text-[8.5px] sm:text-[9.5px] text-black/80 font-sans font-medium leading-tight lowercase tracking-tight">
           {data.supportingSnippet || data.description}
         </p>

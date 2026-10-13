@@ -32,7 +32,7 @@ export function TestimonialsSection() {
     <article
       id="testimonials"
       data-snap-section="true"
-      className="relative w-full h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none"
+      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none py-14 md:py-0"
     >
       {/* Ambient Luxury Background Warm & Red Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] bg-[#EAB308]/6 rounded-full blur-[140px] pointer-events-none -z-10" />
@@ -59,7 +59,7 @@ export function TestimonialsSection() {
       {/* =========================================================================
           Center Stage: Reference Styled Glassmorphic Reviews Showcase
           ========================================================================= */}
-      <div className="relative w-full max-w-5xl mx-auto px-4 sm:px-8 flex-1 flex flex-col justify-center items-center z-10 my-auto">
+      <div className="relative w-full max-w-5xl mx-auto px-4 sm:px-8 flex-1 flex flex-col justify-center items-center z-10 my-auto py-6 md:py-0">
         {/* Subtle Section Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-1.5 rounded-full bg-white/[0.04] border border-white/10 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#EAB308]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-ping" />

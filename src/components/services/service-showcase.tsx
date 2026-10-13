@@ -76,7 +76,7 @@ export function ServiceShowcase({
       ref={containerRef}
       data-snap-service="true"
       data-snap-section="true"
-      className="relative w-full h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none"
+      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-14 md:py-0"
     >
       {/* Dark Luxury Ambient Background with alternating glows */}
       <ServiceBackground glowPosition={isEven ? "left" : "right"} />
@@ -90,7 +90,7 @@ export function ServiceShowcase({
       </div>
 
       {/* Center Stage: Image and Content Grid with Accelerated Upward/Downward Parallax */}
-      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-auto">
+      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-auto py-6 md:py-0">
         {/* Image Column */}
         <motion.div
           style={{ y: contentY, opacity: contentOpacity }}

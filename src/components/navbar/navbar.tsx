@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { navigationData } from "@/data/navigation";
+import { useSiteConfig } from "@/context/site-context";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 
 export function Navbar() {
+  const { config } = useSiteConfig();
   const [isInDarkSection, setIsInDarkSection] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -49,8 +51,15 @@ export function Navbar() {
     }, 250);
   };
 
-  const { brand, menuItems, ctaButton } = navigationData;
+  const brand = {
+    name: config?.brandName || navigationData.brand.name,
+    tagline: config?.tagline || navigationData.brand.tagline,
+    shortName: config?.shortName || navigationData.brand.shortName,
+  };
+  const menuItems = config?.navItems || navigationData.menuItems;
+  const ctaButton = config?.ctaButton || navigationData.ctaButton;
   const servicesItem = menuItems.find((item) => item.children);
+
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -256,14 +265,22 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Drawer Bottom Action */}
-                <div className="pt-4 border-t border-white/10 space-y-3">
+                <div className="pt-4 border-t border-white/10 space-y-2.5">
                   <Link
                     href={ctaButton.href}
                     onClick={(e) => handleNavClick(e, ctaButton.href, true)}
-                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#FF1A1A] text-white font-anton text-base uppercase tracking-wider shadow-md cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#FF1A1A] text-white font-anton text-base uppercase tracking-wider shadow-md cursor-pointer"
                   >
                     <span>{ctaButton.label}</span>
                     <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <Link
+                    href="/admin"
+                    onClick={() => setMobileOpen(false)}
+                    className="w-full flex items-center justify-center gap-1.5 py-2 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
+                  >
+                    <span>Admin Dashboard</span>
                   </Link>
                 </div>
               </SheetContent>

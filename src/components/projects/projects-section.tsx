@@ -31,7 +31,7 @@ export function ProjectsSection() {
       <article
         id="projects-intro"
         data-snap-section="true"
-        className="relative w-full h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none"
+        className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-16 md:py-0"
       >
         {/* Subtle Background Red Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[600px] h-[300px] bg-[#FF1A1A]/12 blur-[130px] pointer-events-none -z-10" />

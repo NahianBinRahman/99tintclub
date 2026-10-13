@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Anton, Inter } from "next/font/google";
 import "./globals.css";
+import { SiteProvider } from "@/context/site-context";
+import { MobileDock } from "@/components/mobile-dock";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -17,6 +19,7 @@ const anton = Anton({
 });
 
 const inter = Inter({
+  weight: "400",
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
@@ -38,8 +41,11 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${anton.variable} ${inter.variable}`}
     >
-      <body className="min-h-screen bg-white text-black font-sans antialiased selection:bg-[#FF1A1A] selection:text-white">
-        {children}
+      <body className="min-h-screen bg-white text-black font-sans antialiased selection:bg-[#FF1A1A] selection:text-white pb-16 md:pb-0">
+        <SiteProvider>
+          {children}
+          <MobileDock />
+        </SiteProvider>
       </body>
     </html>
   );
