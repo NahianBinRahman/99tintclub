@@ -41,6 +41,11 @@ export const navigationData: NavigationConfig = {
   },
   menuItems: [
     {
+      id: "home",
+      label: "HOME",
+      href: "#hero",
+    },
+    {
       id: "services",
       label: "SERVICES",
       href: "#services",
