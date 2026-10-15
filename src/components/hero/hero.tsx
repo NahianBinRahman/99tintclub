@@ -28,27 +28,27 @@ export function Hero({ customData }: HeroProps) {
         poster={data.video.poster}
       />
 
-      {/* Left Badge: Close to left screen edge and lifted slightly higher */}
+      {/* Left Badge: Visible on desktop to frame the studio car, hidden on mobile */}
       {leftBadge && (
-        <div className="absolute top-[33%] sm:top-[34%] left-[1%] sm:left-[1.5%] lg:left-[2%] z-20 pointer-events-auto">
+        <div className="hidden md:block absolute top-[34%] left-[1.5%] lg:left-[2%] z-20 pointer-events-auto">
           <HeroBadge badge={leftBadge} />
         </div>
       )}
 
-      {/* Right Badge: Aligned on the same horizontal line */}
+      {/* Right Badge: Visible on desktop to frame the studio car, hidden on mobile */}
       {rightBadge && (
-        <div className="absolute top-[33%] sm:top-[34%] right-[8%] sm:right-[10%] lg:right-[12%] z-20 pointer-events-auto">
+        <div className="hidden md:block absolute top-[34%] right-[10%] lg:right-[12%] z-20 pointer-events-auto">
           <HeroBadge badge={rightBadge} />
         </div>
       )}
 
-      {/* Bottom Left: Bold Jet Black 2-Line Headline */}
-      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-6 sm:left-10 lg:left-12 z-20 pointer-events-auto">
+      {/* Headline & Studio Details: Comfortably elevated above the mobile dock */}
+      <div className="absolute bottom-28 sm:bottom-32 md:bottom-8 lg:bottom-10 left-5 sm:left-8 lg:left-12 z-20 pointer-events-auto max-w-[88vw] md:max-w-none">
         <HeroContent data={data} />
       </div>
 
-      {/* Bottom Center: Supporting Text + Red BOOK NOW Pill Button */}
-      <div className="absolute bottom-14 sm:bottom-2 lg:bottom-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex flex-col items-center text-center space-y-1.5 max-w-[190px]">
+      {/* Desktop Bottom Center: Supporting Text + Red BOOK NOW Pill Button */}
+      <div className="hidden md:flex absolute bottom-2 lg:bottom-2.5 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex-col items-center text-center space-y-1.5 max-w-[190px]">
         <p className="text-[8.5px] sm:text-[9.5px] text-black/80 font-sans font-medium leading-tight lowercase tracking-tight">
           {data.supportingSnippet || data.description}
         </p>

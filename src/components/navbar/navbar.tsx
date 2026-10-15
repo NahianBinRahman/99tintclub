@@ -93,8 +93,36 @@ export function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-5 sm:top-6 right-6 sm:right-10 lg:right-14 z-50 pointer-events-auto bg-transparent select-none"
+      className="fixed top-4 sm:top-6 inset-x-5 sm:inset-x-8 lg:inset-x-12 z-50 pointer-events-auto flex items-center justify-between bg-transparent select-none"
     >
+      {/* Fixed Screen Positioned $99 TINT CLUB Typographic Logo */}
+      <Link
+        href="#hero"
+        onClick={(e) => handleNavClick(e, "#hero")}
+        className="group flex flex-col items-start cursor-pointer transition-transform duration-300 hover:scale-[1.02] active:scale-95"
+        aria-label="99 Tint Club Home"
+      >
+        <div className="flex items-center gap-1.5 leading-none">
+          <span className="font-anton text-2xl sm:text-3xl tracking-tight text-[#FF1A1A] drop-shadow-sm">
+            $99
+          </span>
+          <span
+            className={`font-anton text-2xl sm:text-3xl tracking-wide uppercase transition-colors duration-300 ${
+              isInDarkSection ? "text-white" : "text-black"
+            }`}
+          >
+            TINT CLUB
+          </span>
+        </div>
+        <span
+          className={`text-[8px] sm:text-[9px] font-mono uppercase tracking-[0.28em] font-medium transition-colors duration-300 mt-0.5 ${
+            isInDarkSection ? "text-zinc-400" : "text-black/60"
+          }`}
+        >
+          AUTOMOTIVE ATELIER
+        </span>
+      </Link>
+
       <div className="flex flex-col items-end relative">
         {/* Transparent Fixed Navigation Links (No pill, no box, no blur background) */}
         <nav
