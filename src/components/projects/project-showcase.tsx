@@ -40,7 +40,7 @@ export function ProjectShowcase({
 
   // Track if this section is actively in the viewport (triggers photo auto-zoom & card entrance)
   const isInView = useInView(containerRef, {
-    amount: 0.25,
+    amount: 0.12,
     once: false,
   });
 
@@ -124,7 +124,7 @@ export function ProjectShowcase({
             alt={project.vehicle}
             projectNumber={project.id}
             priority={index === 0}
-            isInView={isInView || !isDesktop}
+            isInView={isInView}
           />
         </motion.div>
 
@@ -138,7 +138,7 @@ export function ProjectShowcase({
           <ProjectOverlay
             project={project}
             onViewProject={onViewProject}
-            isInView={isInView || !isDesktop}
+            isInView={isInView}
           />
         </motion.div>
       </div>

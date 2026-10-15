@@ -83,7 +83,13 @@ export function ContactSection() {
       <div className="relative w-full max-w-[1300px] mx-auto px-4 sm:px-8 lg:px-10 flex-1 flex flex-col justify-center z-10 my-auto py-6 md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center">
           {/* Left Column (5 Cols): Studio Details & Direct Concierge */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col justify-between space-y-3"
+          >
             <div>
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.25em] text-[#FF1A1A] mb-1.5">
@@ -164,10 +170,16 @@ export function ContactSection() {
               <span>•</span>
               <span>SAT: 09:00 – 17:00</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column (7 Cols): Sleek Glass Booking Consultation Form */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
             <div className="rounded-[28px] sm:rounded-[32px] bg-white/[0.035] border border-white/[0.14] backdrop-blur-2xl p-4 sm:p-5 shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)]">
               {isSubmitted ? (
                 <motion.div
@@ -268,7 +280,7 @@ export function ContactSection() {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

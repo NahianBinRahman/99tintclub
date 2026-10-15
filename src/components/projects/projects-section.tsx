@@ -50,7 +50,7 @@ export function ProjectsSection() {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[9px] sm:text-[10.5px] font-mono uppercase tracking-[0.25em] text-[#FF1A1A]"
           >
@@ -62,7 +62,7 @@ export function ProjectsSection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-anton text-3xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase tracking-tight text-white leading-[0.93]"
           >
@@ -73,7 +73,7 @@ export function ProjectsSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xs sm:text-sm text-[#A0A0A0] max-w-2xl font-sans font-light leading-relaxed line-clamp-2 sm:line-clamp-3"
           >
@@ -84,7 +84,7 @@ export function ProjectsSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-zinc-400"
           >
@@ -106,7 +106,7 @@ export function ProjectsSection() {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.7, delay: 0.35 }}
             className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[10px] sm:text-[10.5px]"
           >
@@ -133,7 +133,7 @@ export function ProjectsSection() {
             }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.15 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="pt-2 flex flex-col items-center gap-1.5 text-zinc-500 hover:text-white transition-colors cursor-pointer outline-none"
           >
@@ -220,7 +220,13 @@ export function ProjectsSection() {
         </div>
 
         {/* Center Stage */}
-        <div className="max-w-3xl mx-auto px-6 space-y-3 sm:space-y-4 my-auto z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl mx-auto px-6 space-y-3 sm:space-y-4 my-auto z-10"
+        >
           <span className="text-[9.5px] sm:text-[10.5px] font-mono uppercase tracking-[0.3em] text-[#FF1A1A] font-semibold">
             ELEVATE YOUR VEHICLE // PRIVATE ARCHIVE
           </span>
@@ -238,7 +244,7 @@ export function ProjectsSection() {
               BOOK A PRIVATE CONSULTATION
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Stepper Bar */}
         <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pb-4 sm:pb-6 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 select-none">

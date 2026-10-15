@@ -38,7 +38,7 @@ export function ServiceShowcase({
 
   // Track if this section is actively in the viewport (triggers photo auto-zoom & text movement animations)
   const isInView = useInView(containerRef, {
-    amount: 0.25,
+    amount: 0.12,
     once: false,
   });
 
@@ -109,7 +109,7 @@ export function ServiceShowcase({
             alt={service.title}
             isEven={isEven}
             serviceId={service.id}
-            isInView={isInView || !isDesktop}
+            isInView={isInView}
           />
         </motion.div>
 
@@ -123,7 +123,7 @@ export function ServiceShowcase({
           <ServiceContent
             service={service}
             isEven={isEven}
-            isInView={isInView || !isDesktop}
+            isInView={isInView}
             watermarkY={watermarkY}
             watermarkOpacity={watermarkOpacity}
           />

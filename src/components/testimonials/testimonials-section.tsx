@@ -87,7 +87,13 @@ export function TestimonialsSection() {
           </div>
 
           {/* Center Main Glassmorphic Card (Directly inspired by reference screenshot) */}
-          <div className="relative w-full max-w-[500px] sm:max-w-[530px] rounded-[28px] sm:rounded-[32px] bg-white/[0.035] border border-white/[0.14] backdrop-blur-2xl shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)] p-4 sm:p-5 md:p-6 flex flex-col justify-between transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-[500px] sm:max-w-[530px] rounded-[28px] sm:rounded-[32px] bg-white/[0.035] border border-white/[0.14] backdrop-blur-2xl shadow-[0_16px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)] p-4 sm:p-5 md:p-6 flex flex-col justify-between transition-all duration-300"
+          >
             {/* Top Card Header: Client Feedback + 5 Gold Stars */}
             <div className="flex items-start justify-between mb-3">
               <div>
@@ -198,7 +204,7 @@ export function TestimonialsSection() {
             >
               "{currentReview.studioReply}"
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Right Peeking Card (Directly inspired by reference screenshot) */}
           <div

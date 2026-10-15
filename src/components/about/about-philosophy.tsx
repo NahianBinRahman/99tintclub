@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { AboutData } from "@/data/about";
 import { ChevronDown, ChevronUp, ArrowRight, Sparkles } from "lucide-react";
@@ -17,10 +17,18 @@ export function AboutPhilosophy({
   nextTargetId,
 }: AboutPhilosophyProps) {
   const containerRef = useRef<HTMLElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Viewport tracking for auto entrance animations every time section enters view
   const isInView = useInView(containerRef, {
-    amount: 0.35,
+    amount: 0.12,
     once: false,
   });
 
@@ -90,7 +98,7 @@ export function AboutPhilosophy({
 
       {/* Center Stage: Monumental Statement & Philosophy Pillars */}
       <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
+        style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
         className="w-full max-w-[1350px] mx-auto px-6 sm:px-10 lg:px-14 flex flex-col justify-center items-center text-center flex-1 z-10 my-auto space-y-2.5 sm:space-y-3.5 lg:space-y-4"
       >
         {/* Eyebrow Badge & Tagline */}
