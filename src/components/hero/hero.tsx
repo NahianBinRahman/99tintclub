@@ -22,7 +22,11 @@ export function Hero({ customData }: HeroProps) {
       className="relative w-full h-screen max-h-screen overflow-hidden bg-white select-none"
     >
       {/* Background Video Component (Unobscured High-Key White Studio) */}
-      <HeroVideo src={data.video.src} poster={data.video.poster} />
+      <HeroVideo
+        src={data.video.src}
+        mobileSrc={data.video.mobileSrc}
+        poster={data.video.poster}
+      />
 
       {/* Left Badge: Close to left screen edge and lifted slightly higher */}
       {leftBadge && (

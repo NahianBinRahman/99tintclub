@@ -107,14 +107,10 @@ export const navigationData: NavigationConfig = {
       label: "REVIEWS",
       href: "#testimonials",
     },
-    {
-      id: "contact",
-      label: "CONTACT",
-      href: "#contact",
-    },
   ],
   ctaButton: {
     label: "GET IN TOUCH",
     href: "#contact",
   },
 };
+

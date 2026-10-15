@@ -17,6 +17,7 @@ export interface FloatingCardConfig {
 export interface HeroConfig {
   video: {
     src: string;
+    mobileSrc?: string;
     poster: string;
   };
   badges: HeroBadge[];
@@ -41,6 +42,7 @@ export interface HeroConfig {
 export const heroData: HeroConfig = {
   video: {
     src: "/videos/hero-bg-99tintclub.mp4",
+    mobileSrc: "/videos/hero-bg-mobile.mp4",
     poster: "/images/car-preview.jpg",
   },
   badges: [

@@ -56,9 +56,12 @@ export function Navbar() {
     tagline: config?.tagline || navigationData.brand.tagline,
     shortName: config?.shortName || navigationData.brand.shortName,
   };
-  const menuItems = config?.navItems || navigationData.menuItems;
+  const menuItems = (config?.navItems || navigationData.menuItems).filter(
+    (item) => item.id !== "contact" && item.label?.toUpperCase() !== "CONTACT"
+  );
   const ctaButton = config?.ctaButton || navigationData.ctaButton;
   const servicesItem = menuItems.find((item) => item.children);
+
 
 
   const handleNavClick = (

@@ -146,15 +146,21 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({
   const [config, setConfig] = useState<SiteConfig>(initialSiteConfig);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Load from localStorage on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
+        const sanitizedNavItems = parsed.navItems
+          ? (parsed.navItems as NavItem[]).filter(
+              (item: NavItem) => item.id !== "contact" && item.label?.toUpperCase() !== "CONTACT"
+            )
+          : initialSiteConfig.navItems;
+
         setConfig({
           ...initialSiteConfig,
           ...parsed,
+          navItems: sanitizedNavItems,
           theme: {
             ...initialSiteConfig.theme,
             ...(parsed.theme || {}),
@@ -165,6 +171,7 @@ export const SiteProvider: React.FC<{ children: React.ReactNode }> = ({
           },
         });
       }
+
     } catch (e) {
       console.error("Failed to load saved configuration", e);
     } finally {
