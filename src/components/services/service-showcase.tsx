@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import type { ServiceItem } from "@/data/services";
 import { ServiceImage } from "./service-image";
@@ -27,10 +27,18 @@ export function ServiceShowcase({
 }: ServiceShowcaseProps) {
   const containerRef = useRef<HTMLElement>(null);
   const isEven = index % 2 === 0;
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Track if this section is actively in the viewport (triggers photo auto-zoom & text movement animations)
   const isInView = useInView(containerRef, {
-    amount: 0.45,
+    amount: 0.25,
     once: false,
   });
 
@@ -40,9 +48,7 @@ export function ServiceShowcase({
     offset: ["start end", "end start"],
   });
 
-  // Upward Exit & Downward Return Parallax
-  // When scrolling DOWN to the next section (0.55 -> 0.95), content accelerates UPWARDS (-240px)!
-  // When scrolling UP to the previous section (0.45 -> 0.05), content moves DOWNWARDS (+180px)!
+  // Upward Exit & Downward Return Parallax (strictly desktop only)
   const contentY = useTransform(
     scrollYProgress,
     [0.05, 0.45, 0.55, 0.95],
@@ -76,24 +82,24 @@ export function ServiceShowcase({
       ref={containerRef}
       data-snap-service="true"
       data-snap-section="true"
-      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-14 md:py-0"
+      className="relative w-full min-h-0 md:min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-6 sm:py-8 md:py-0"
     >
       {/* Dark Luxury Ambient Background with alternating glows */}
       <ServiceBackground glowPosition={isEven ? "left" : "right"} />
 
       {/* Top Studio Metadata Header */}
-      <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pt-16 sm:pt-20 lg:pt-16 flex items-center justify-between text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 pointer-events-none select-none">
+      <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 md:pt-16 flex items-center justify-between text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 pointer-events-none select-none">
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[#FF1A1A]" />
           <span>// 99 TINT CLUB ARCHIVE — 02.{service.id}</span>
         </div>
       </div>
 
-      {/* Center Stage: Image and Content Grid with Accelerated Upward/Downward Parallax */}
-      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-auto py-6 md:py-0">
+      {/* Center Stage: Image and Content Grid */}
+      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-3 md:my-auto py-2 md:py-0">
         {/* Image Column */}
         <motion.div
-          style={{ y: contentY, opacity: contentOpacity }}
+          style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
           className={`w-full flex items-center justify-center ${
             isEven ? "order-1 lg:order-1" : "order-1 lg:order-2"
           }`}
@@ -103,13 +109,13 @@ export function ServiceShowcase({
             alt={service.title}
             isEven={isEven}
             serviceId={service.id}
-            isInView={isInView}
+            isInView={isInView || !isDesktop}
           />
         </motion.div>
 
         {/* Content Column */}
         <motion.div
-          style={{ y: contentY, opacity: contentOpacity }}
+          style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
           className={`w-full flex items-center ${
             isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"
           }`}
@@ -117,7 +123,7 @@ export function ServiceShowcase({
           <ServiceContent
             service={service}
             isEven={isEven}
-            isInView={isInView}
+            isInView={isInView || !isDesktop}
             watermarkY={watermarkY}
             watermarkOpacity={watermarkOpacity}
           />

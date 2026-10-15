@@ -21,7 +21,7 @@ export function ServicesSection() {
       <article
         id="services-intro"
         data-snap-section="true"
-        className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-16 md:py-0"
+        className="relative w-full min-h-0 md:min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-10 md:py-0"
       >
         {/* Subtle Background Red Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[600px] h-[300px] bg-[#FF1A1A]/12 blur-[130px] pointer-events-none -z-10" />
@@ -161,7 +161,7 @@ export function ServicesSection() {
       <article
         id="services-consultation"
         data-snap-section="true"
-        className="relative w-full h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-gradient-to-b from-[#050505] to-[#0c0c0c] select-none text-center"
+        className="relative w-full min-h-0 md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-gradient-to-b from-[#050505] to-[#0c0c0c] select-none text-center py-10 md:py-0"
       >
         {/* Top Studio Metadata Header */}
         <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pt-16 sm:pt-20 lg:pt-16 flex items-center justify-between text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 pointer-events-none select-none">

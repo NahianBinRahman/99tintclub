@@ -32,7 +32,7 @@ export function TestimonialsSection() {
     <article
       id="testimonials"
       data-snap-section="true"
-      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none py-14 md:py-0"
+      className="relative w-full min-h-0 md:min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] text-white select-none py-8 md:py-0"
     >
       {/* Ambient Luxury Background Warm & Red Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] bg-[#EAB308]/6 rounded-full blur-[140px] pointer-events-none -z-10" />

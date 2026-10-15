@@ -57,7 +57,7 @@ export function AboutMetrics({
       ref={containerRef}
       data-snap-section="true"
       data-snap-about="true"
-      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-14 md:py-0"
+      className="relative w-full min-h-0 md:min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-8 md:py-0"
     >
       {/* Background Subtle Red Ambient Glow */}
       <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[650px] h-[450px] bg-[#FF1A1A]/10 rounded-full blur-[150px] pointer-events-none -z-10" />

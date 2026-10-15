@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { ProjectItem } from "@/data/projects";
 import { ProjectImage } from "./project-image";
@@ -29,10 +29,18 @@ export function ProjectShowcase({
 }: ProjectShowcaseProps) {
   const containerRef = useRef<HTMLElement>(null);
   const isEven = index % 2 === 0;
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Track if this section is actively in the viewport (triggers photo auto-zoom & card entrance)
   const isInView = useInView(containerRef, {
-    amount: 0.45,
+    amount: 0.25,
     once: false,
   });
 
@@ -42,7 +50,7 @@ export function ProjectShowcase({
     offset: ["start end", "end start"],
   });
 
-  // Parallax upward exit & downward return matching the service showcase
+  // Parallax upward exit & downward return matching the service showcase (desktop only)
   const contentY = useTransform(
     scrollYProgress,
     [0.05, 0.45, 0.55, 0.95],
@@ -76,7 +84,7 @@ export function ProjectShowcase({
       ref={containerRef}
       data-snap-project="true"
       data-snap-section="true"
-      className="relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-y-auto md:overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-14 md:py-0"
+      className="relative w-full min-h-0 md:min-h-screen md:h-screen md:max-h-screen flex flex-col justify-between items-center overflow-hidden border-b border-white/[0.04] bg-[#050505] select-none py-6 sm:py-8 md:py-0"
     >
       {/* Dark Luxury Ambient Background with alternating glows */}
       <ProjectBackground glowPosition={isEven ? "left" : "right"} />
@@ -90,7 +98,7 @@ export function ProjectShowcase({
       </motion.span>
 
       {/* Top Studio Metadata Header */}
-      <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pt-16 sm:pt-20 lg:pt-16 flex items-center justify-between text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 pointer-events-none select-none">
+      <div className="relative z-20 w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 md:pt-16 flex items-center justify-between text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 pointer-events-none select-none">
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[#FF1A1A]" />
           <span>// 99 TINT CLUB ARCHIVE — 03.{project.id}</span>
@@ -102,11 +110,11 @@ export function ProjectShowcase({
         </div>
       </div>
 
-      {/* Center Stage: Image and Content Grid with Parallax */}
-      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-auto py-6 md:py-0">
+      {/* Center Stage: Image and Content Grid */}
+      <div className="w-full max-w-[1550px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 lg:gap-12 xl:gap-16 items-center flex-1 z-10 my-3 md:my-auto py-2 md:py-0">
         {/* Left Column in Even / Right in Odd: Image */}
         <motion.div
-          style={{ y: contentY, opacity: contentOpacity }}
+          style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
           className={`w-full flex items-center justify-center ${
             isEven ? "order-1 lg:order-1" : "order-1 lg:order-2"
           }`}
@@ -116,13 +124,13 @@ export function ProjectShowcase({
             alt={project.vehicle}
             projectNumber={project.id}
             priority={index === 0}
-            isInView={isInView}
+            isInView={isInView || !isDesktop}
           />
         </motion.div>
 
         {/* Right Column in Even / Left in Odd: Overlay Content Card */}
         <motion.div
-          style={{ y: contentY, opacity: contentOpacity }}
+          style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
           className={`w-full flex items-center justify-center ${
             isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"
           }`}
@@ -130,7 +138,7 @@ export function ProjectShowcase({
           <ProjectOverlay
             project={project}
             onViewProject={onViewProject}
-            isInView={isInView}
+            isInView={isInView || !isDesktop}
           />
         </motion.div>
       </div>
