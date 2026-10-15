@@ -124,10 +124,10 @@ export function HeroVideo({
       className={`absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 ${className}`}
       aria-hidden="true"
     >
-      {/* Background Poster Container (High-res studio car preview always crisp and clean) */}
+      {/* Background Poster Container: Only used on desktop if video is loading */}
       {poster && (
         <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center -z-10"
+          className="hidden md:block absolute inset-0 w-full h-full bg-cover bg-center -z-10"
           style={{ backgroundImage: `url(${poster})` }}
         />
       )}
@@ -145,23 +145,16 @@ export function HeroVideo({
         disablePictureInPicture
         disableRemotePlayback
         onPlaying={() => setIsDesktopPlaying(true)}
-        onTimeUpdate={() => {
-          if (!isDesktopPlaying) setIsDesktopPlaying(true);
-        }}
         onEnded={handleLoop}
         className={`${
           mobileSrc ? "hidden md:block" : "block"
-        } w-full h-full object-cover object-center transition-opacity duration-700 ${
-          isDesktopPlaying ? "opacity-100" : "opacity-0"
-        }`}
+        } w-full h-full object-cover object-center`}
       />
 
-      {/* Mobile Animated Background Video:
-          Keeps opacity-0 until playback actually starts so iOS Low Power Mode CANNOT stamp the native play icon over the car */}
+      {/* Mobile Animated Background Video (Always the true GT-R rear view, never a mismatched image) */}
       {mobileSrc && (
         <video
           ref={setMobileRef}
-          src={mobileSrc}
           autoPlay
           muted
           loop
@@ -171,14 +164,11 @@ export function HeroVideo({
           disablePictureInPicture
           disableRemotePlayback
           onPlaying={() => setIsMobilePlaying(true)}
-          onTimeUpdate={() => {
-            if (!isMobilePlaying) setIsMobilePlaying(true);
-          }}
           onEnded={handleLoop}
-          className={`block md:hidden w-full h-full object-cover object-center transition-opacity duration-700 ${
-            isMobilePlaying ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        />
+          className="block md:hidden w-full h-full object-cover object-center"
+        >
+          <source src={mobileSrc} type="video/mp4" />
+        </video>
       )}
 
       {/* Ultra-subtle ambient contrast */}
