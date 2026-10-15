@@ -89,11 +89,8 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-4 sm:top-6 inset-x-5 sm:inset-x-8 lg:inset-x-12 z-50 pointer-events-auto flex items-center justify-between bg-transparent select-none"
+    <header
+      className="fixed top-3 sm:top-5 inset-x-5 sm:inset-x-8 lg:inset-x-12 z-50 pointer-events-auto flex items-center justify-between bg-transparent select-none transition-transform duration-300"
     >
       {/* Fixed Screen Positioned $99 TINT CLUB Typographic Logo */}
       <Link
@@ -361,6 +358,6 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </header>
   );
 }

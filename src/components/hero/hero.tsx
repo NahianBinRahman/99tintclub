@@ -19,7 +19,7 @@ export function Hero({ customData }: HeroProps) {
     <section
       id="hero"
       data-snap-section="true"
-      className="relative w-full h-screen max-h-screen overflow-hidden bg-white select-none"
+      className="relative w-full h-[100dvh] min-h-[100dvh] max-h-[100dvh] overflow-hidden bg-white select-none"
     >
       {/* Background Video Component (Unobscured High-Key White Studio) */}
       <HeroVideo
@@ -43,7 +43,7 @@ export function Hero({ customData }: HeroProps) {
       )}
 
       {/* Headline & Studio Details: Comfortably elevated above the mobile dock */}
-      <div className="absolute bottom-28 sm:bottom-32 md:bottom-8 lg:bottom-10 left-5 sm:left-8 lg:left-12 z-20 pointer-events-auto max-w-[88vw] md:max-w-none">
+      <div className="absolute bottom-24 sm:bottom-28 md:bottom-8 lg:bottom-10 left-5 sm:left-8 lg:left-12 z-20 pointer-events-auto max-w-[88vw] md:max-w-none">
         <HeroContent data={data} />
       </div>
 
